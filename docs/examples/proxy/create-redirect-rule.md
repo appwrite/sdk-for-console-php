@@ -1,0 +1,21 @@
+```php
+<?php
+
+use Appwrite\Client;
+use Appwrite\Services\Proxy;
+use Appwrite\Enums\StatusCode;
+use Appwrite\Enums\ProxyResourceType;
+
+$client = (new Client())
+    ->setEndpoint('https://<REGION>.cloud.appwrite.io/v1') // Your API Endpoint
+    ->setProject('<YOUR_PROJECT_ID>'); // Your project ID
+
+$proxy = new Proxy($client);
+
+$result = $proxy->createRedirectRule(
+    domain: '',
+    url: 'https://example.com',
+    statusCode: StatusCode::MOVEDPERMANENTLY301(),
+    resourceId: '<RESOURCE_ID>',
+    resourceType: ProxyResourceType::SITE()
+);```
