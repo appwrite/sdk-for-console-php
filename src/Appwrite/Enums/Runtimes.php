@@ -13,27 +13,38 @@ class Runtimes implements JsonSerializable
     private static Runtimes $NODE200;
     private static Runtimes $NODE210;
     private static Runtimes $NODE22;
+    private static Runtimes $NODE23;
+    private static Runtimes $NODE24;
+    private static Runtimes $NODE25;
     private static Runtimes $PHP80;
     private static Runtimes $PHP81;
     private static Runtimes $PHP82;
     private static Runtimes $PHP83;
+    private static Runtimes $PHP84;
     private static Runtimes $RUBY30;
     private static Runtimes $RUBY31;
     private static Runtimes $RUBY32;
     private static Runtimes $RUBY33;
+    private static Runtimes $RUBY34;
+    private static Runtimes $RUBY40;
     private static Runtimes $PYTHON38;
     private static Runtimes $PYTHON39;
     private static Runtimes $PYTHON310;
     private static Runtimes $PYTHON311;
     private static Runtimes $PYTHON312;
+    private static Runtimes $PYTHON313;
+    private static Runtimes $PYTHON314;
     private static Runtimes $PYTHONML311;
     private static Runtimes $PYTHONML312;
+    private static Runtimes $PYTHONML313;
     private static Runtimes $DENO121;
     private static Runtimes $DENO124;
     private static Runtimes $DENO135;
     private static Runtimes $DENO140;
     private static Runtimes $DENO146;
     private static Runtimes $DENO20;
+    private static Runtimes $DENO25;
+    private static Runtimes $DENO26;
     private static Runtimes $DART215;
     private static Runtimes $DART216;
     private static Runtimes $DART217;
@@ -49,25 +60,34 @@ class Runtimes implements JsonSerializable
     private static Runtimes $DOTNET60;
     private static Runtimes $DOTNET70;
     private static Runtimes $DOTNET80;
+    private static Runtimes $DOTNET10;
     private static Runtimes $JAVA80;
     private static Runtimes $JAVA110;
     private static Runtimes $JAVA170;
     private static Runtimes $JAVA180;
     private static Runtimes $JAVA210;
     private static Runtimes $JAVA22;
+    private static Runtimes $JAVA25;
     private static Runtimes $SWIFT55;
     private static Runtimes $SWIFT58;
     private static Runtimes $SWIFT59;
     private static Runtimes $SWIFT510;
+    private static Runtimes $SWIFT62;
     private static Runtimes $KOTLIN16;
     private static Runtimes $KOTLIN18;
     private static Runtimes $KOTLIN19;
     private static Runtimes $KOTLIN20;
+    private static Runtimes $KOTLIN23;
     private static Runtimes $CPP17;
     private static Runtimes $CPP20;
     private static Runtimes $BUN10;
     private static Runtimes $BUN11;
+    private static Runtimes $BUN12;
+    private static Runtimes $BUN13;
     private static Runtimes $GO123;
+    private static Runtimes $GO124;
+    private static Runtimes $GO125;
+    private static Runtimes $GO126;
     private static Runtimes $STATIC1;
     private static Runtimes $FLUTTER324;
     private static Runtimes $FLUTTER327;
@@ -142,6 +162,27 @@ class Runtimes implements JsonSerializable
         }
         return self::$NODE22;
     }
+    public static function NODE23(): Runtimes
+    {
+        if (!isset(self::$NODE23)) {
+            self::$NODE23 = new Runtimes('node-23');
+        }
+        return self::$NODE23;
+    }
+    public static function NODE24(): Runtimes
+    {
+        if (!isset(self::$NODE24)) {
+            self::$NODE24 = new Runtimes('node-24');
+        }
+        return self::$NODE24;
+    }
+    public static function NODE25(): Runtimes
+    {
+        if (!isset(self::$NODE25)) {
+            self::$NODE25 = new Runtimes('node-25');
+        }
+        return self::$NODE25;
+    }
     public static function PHP80(): Runtimes
     {
         if (!isset(self::$PHP80)) {
@@ -170,6 +211,13 @@ class Runtimes implements JsonSerializable
         }
         return self::$PHP83;
     }
+    public static function PHP84(): Runtimes
+    {
+        if (!isset(self::$PHP84)) {
+            self::$PHP84 = new Runtimes('php-8.4');
+        }
+        return self::$PHP84;
+    }
     public static function RUBY30(): Runtimes
     {
         if (!isset(self::$RUBY30)) {
@@ -197,6 +245,20 @@ class Runtimes implements JsonSerializable
             self::$RUBY33 = new Runtimes('ruby-3.3');
         }
         return self::$RUBY33;
+    }
+    public static function RUBY34(): Runtimes
+    {
+        if (!isset(self::$RUBY34)) {
+            self::$RUBY34 = new Runtimes('ruby-3.4');
+        }
+        return self::$RUBY34;
+    }
+    public static function RUBY40(): Runtimes
+    {
+        if (!isset(self::$RUBY40)) {
+            self::$RUBY40 = new Runtimes('ruby-4.0');
+        }
+        return self::$RUBY40;
     }
     public static function PYTHON38(): Runtimes
     {
@@ -233,6 +295,20 @@ class Runtimes implements JsonSerializable
         }
         return self::$PYTHON312;
     }
+    public static function PYTHON313(): Runtimes
+    {
+        if (!isset(self::$PYTHON313)) {
+            self::$PYTHON313 = new Runtimes('python-3.13');
+        }
+        return self::$PYTHON313;
+    }
+    public static function PYTHON314(): Runtimes
+    {
+        if (!isset(self::$PYTHON314)) {
+            self::$PYTHON314 = new Runtimes('python-3.14');
+        }
+        return self::$PYTHON314;
+    }
     public static function PYTHONML311(): Runtimes
     {
         if (!isset(self::$PYTHONML311)) {
@@ -246,6 +322,13 @@ class Runtimes implements JsonSerializable
             self::$PYTHONML312 = new Runtimes('python-ml-3.12');
         }
         return self::$PYTHONML312;
+    }
+    public static function PYTHONML313(): Runtimes
+    {
+        if (!isset(self::$PYTHONML313)) {
+            self::$PYTHONML313 = new Runtimes('python-ml-3.13');
+        }
+        return self::$PYTHONML313;
     }
     public static function DENO121(): Runtimes
     {
@@ -288,6 +371,20 @@ class Runtimes implements JsonSerializable
             self::$DENO20 = new Runtimes('deno-2.0');
         }
         return self::$DENO20;
+    }
+    public static function DENO25(): Runtimes
+    {
+        if (!isset(self::$DENO25)) {
+            self::$DENO25 = new Runtimes('deno-2.5');
+        }
+        return self::$DENO25;
+    }
+    public static function DENO26(): Runtimes
+    {
+        if (!isset(self::$DENO26)) {
+            self::$DENO26 = new Runtimes('deno-2.6');
+        }
+        return self::$DENO26;
     }
     public static function DART215(): Runtimes
     {
@@ -394,6 +491,13 @@ class Runtimes implements JsonSerializable
         }
         return self::$DOTNET80;
     }
+    public static function DOTNET10(): Runtimes
+    {
+        if (!isset(self::$DOTNET10)) {
+            self::$DOTNET10 = new Runtimes('dotnet-10');
+        }
+        return self::$DOTNET10;
+    }
     public static function JAVA80(): Runtimes
     {
         if (!isset(self::$JAVA80)) {
@@ -436,6 +540,13 @@ class Runtimes implements JsonSerializable
         }
         return self::$JAVA22;
     }
+    public static function JAVA25(): Runtimes
+    {
+        if (!isset(self::$JAVA25)) {
+            self::$JAVA25 = new Runtimes('java-25');
+        }
+        return self::$JAVA25;
+    }
     public static function SWIFT55(): Runtimes
     {
         if (!isset(self::$SWIFT55)) {
@@ -463,6 +574,13 @@ class Runtimes implements JsonSerializable
             self::$SWIFT510 = new Runtimes('swift-5.10');
         }
         return self::$SWIFT510;
+    }
+    public static function SWIFT62(): Runtimes
+    {
+        if (!isset(self::$SWIFT62)) {
+            self::$SWIFT62 = new Runtimes('swift-6.2');
+        }
+        return self::$SWIFT62;
     }
     public static function KOTLIN16(): Runtimes
     {
@@ -492,6 +610,13 @@ class Runtimes implements JsonSerializable
         }
         return self::$KOTLIN20;
     }
+    public static function KOTLIN23(): Runtimes
+    {
+        if (!isset(self::$KOTLIN23)) {
+            self::$KOTLIN23 = new Runtimes('kotlin-2.3');
+        }
+        return self::$KOTLIN23;
+    }
     public static function CPP17(): Runtimes
     {
         if (!isset(self::$CPP17)) {
@@ -520,12 +645,47 @@ class Runtimes implements JsonSerializable
         }
         return self::$BUN11;
     }
+    public static function BUN12(): Runtimes
+    {
+        if (!isset(self::$BUN12)) {
+            self::$BUN12 = new Runtimes('bun-1.2');
+        }
+        return self::$BUN12;
+    }
+    public static function BUN13(): Runtimes
+    {
+        if (!isset(self::$BUN13)) {
+            self::$BUN13 = new Runtimes('bun-1.3');
+        }
+        return self::$BUN13;
+    }
     public static function GO123(): Runtimes
     {
         if (!isset(self::$GO123)) {
             self::$GO123 = new Runtimes('go-1.23');
         }
         return self::$GO123;
+    }
+    public static function GO124(): Runtimes
+    {
+        if (!isset(self::$GO124)) {
+            self::$GO124 = new Runtimes('go-1.24');
+        }
+        return self::$GO124;
+    }
+    public static function GO125(): Runtimes
+    {
+        if (!isset(self::$GO125)) {
+            self::$GO125 = new Runtimes('go-1.25');
+        }
+        return self::$GO125;
+    }
+    public static function GO126(): Runtimes
+    {
+        if (!isset(self::$GO126)) {
+            self::$GO126 = new Runtimes('go-1.26');
+        }
+        return self::$GO126;
     }
     public static function STATIC1(): Runtimes
     {
