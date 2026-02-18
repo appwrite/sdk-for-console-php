@@ -13,27 +13,38 @@ class BuildRuntime implements JsonSerializable
     private static BuildRuntime $NODE200;
     private static BuildRuntime $NODE210;
     private static BuildRuntime $NODE22;
+    private static BuildRuntime $NODE23;
+    private static BuildRuntime $NODE24;
+    private static BuildRuntime $NODE25;
     private static BuildRuntime $PHP80;
     private static BuildRuntime $PHP81;
     private static BuildRuntime $PHP82;
     private static BuildRuntime $PHP83;
+    private static BuildRuntime $PHP84;
     private static BuildRuntime $RUBY30;
     private static BuildRuntime $RUBY31;
     private static BuildRuntime $RUBY32;
     private static BuildRuntime $RUBY33;
+    private static BuildRuntime $RUBY34;
+    private static BuildRuntime $RUBY40;
     private static BuildRuntime $PYTHON38;
     private static BuildRuntime $PYTHON39;
     private static BuildRuntime $PYTHON310;
     private static BuildRuntime $PYTHON311;
     private static BuildRuntime $PYTHON312;
+    private static BuildRuntime $PYTHON313;
+    private static BuildRuntime $PYTHON314;
     private static BuildRuntime $PYTHONML311;
     private static BuildRuntime $PYTHONML312;
+    private static BuildRuntime $PYTHONML313;
     private static BuildRuntime $DENO121;
     private static BuildRuntime $DENO124;
     private static BuildRuntime $DENO135;
     private static BuildRuntime $DENO140;
     private static BuildRuntime $DENO146;
     private static BuildRuntime $DENO20;
+    private static BuildRuntime $DENO25;
+    private static BuildRuntime $DENO26;
     private static BuildRuntime $DART215;
     private static BuildRuntime $DART216;
     private static BuildRuntime $DART217;
@@ -49,25 +60,34 @@ class BuildRuntime implements JsonSerializable
     private static BuildRuntime $DOTNET60;
     private static BuildRuntime $DOTNET70;
     private static BuildRuntime $DOTNET80;
+    private static BuildRuntime $DOTNET10;
     private static BuildRuntime $JAVA80;
     private static BuildRuntime $JAVA110;
     private static BuildRuntime $JAVA170;
     private static BuildRuntime $JAVA180;
     private static BuildRuntime $JAVA210;
     private static BuildRuntime $JAVA22;
+    private static BuildRuntime $JAVA25;
     private static BuildRuntime $SWIFT55;
     private static BuildRuntime $SWIFT58;
     private static BuildRuntime $SWIFT59;
     private static BuildRuntime $SWIFT510;
+    private static BuildRuntime $SWIFT62;
     private static BuildRuntime $KOTLIN16;
     private static BuildRuntime $KOTLIN18;
     private static BuildRuntime $KOTLIN19;
     private static BuildRuntime $KOTLIN20;
+    private static BuildRuntime $KOTLIN23;
     private static BuildRuntime $CPP17;
     private static BuildRuntime $CPP20;
     private static BuildRuntime $BUN10;
     private static BuildRuntime $BUN11;
+    private static BuildRuntime $BUN12;
+    private static BuildRuntime $BUN13;
     private static BuildRuntime $GO123;
+    private static BuildRuntime $GO124;
+    private static BuildRuntime $GO125;
+    private static BuildRuntime $GO126;
     private static BuildRuntime $STATIC1;
     private static BuildRuntime $FLUTTER324;
     private static BuildRuntime $FLUTTER327;
@@ -142,6 +162,27 @@ class BuildRuntime implements JsonSerializable
         }
         return self::$NODE22;
     }
+    public static function NODE23(): BuildRuntime
+    {
+        if (!isset(self::$NODE23)) {
+            self::$NODE23 = new BuildRuntime('node-23');
+        }
+        return self::$NODE23;
+    }
+    public static function NODE24(): BuildRuntime
+    {
+        if (!isset(self::$NODE24)) {
+            self::$NODE24 = new BuildRuntime('node-24');
+        }
+        return self::$NODE24;
+    }
+    public static function NODE25(): BuildRuntime
+    {
+        if (!isset(self::$NODE25)) {
+            self::$NODE25 = new BuildRuntime('node-25');
+        }
+        return self::$NODE25;
+    }
     public static function PHP80(): BuildRuntime
     {
         if (!isset(self::$PHP80)) {
@@ -170,6 +211,13 @@ class BuildRuntime implements JsonSerializable
         }
         return self::$PHP83;
     }
+    public static function PHP84(): BuildRuntime
+    {
+        if (!isset(self::$PHP84)) {
+            self::$PHP84 = new BuildRuntime('php-8.4');
+        }
+        return self::$PHP84;
+    }
     public static function RUBY30(): BuildRuntime
     {
         if (!isset(self::$RUBY30)) {
@@ -197,6 +245,20 @@ class BuildRuntime implements JsonSerializable
             self::$RUBY33 = new BuildRuntime('ruby-3.3');
         }
         return self::$RUBY33;
+    }
+    public static function RUBY34(): BuildRuntime
+    {
+        if (!isset(self::$RUBY34)) {
+            self::$RUBY34 = new BuildRuntime('ruby-3.4');
+        }
+        return self::$RUBY34;
+    }
+    public static function RUBY40(): BuildRuntime
+    {
+        if (!isset(self::$RUBY40)) {
+            self::$RUBY40 = new BuildRuntime('ruby-4.0');
+        }
+        return self::$RUBY40;
     }
     public static function PYTHON38(): BuildRuntime
     {
@@ -233,6 +295,20 @@ class BuildRuntime implements JsonSerializable
         }
         return self::$PYTHON312;
     }
+    public static function PYTHON313(): BuildRuntime
+    {
+        if (!isset(self::$PYTHON313)) {
+            self::$PYTHON313 = new BuildRuntime('python-3.13');
+        }
+        return self::$PYTHON313;
+    }
+    public static function PYTHON314(): BuildRuntime
+    {
+        if (!isset(self::$PYTHON314)) {
+            self::$PYTHON314 = new BuildRuntime('python-3.14');
+        }
+        return self::$PYTHON314;
+    }
     public static function PYTHONML311(): BuildRuntime
     {
         if (!isset(self::$PYTHONML311)) {
@@ -246,6 +322,13 @@ class BuildRuntime implements JsonSerializable
             self::$PYTHONML312 = new BuildRuntime('python-ml-3.12');
         }
         return self::$PYTHONML312;
+    }
+    public static function PYTHONML313(): BuildRuntime
+    {
+        if (!isset(self::$PYTHONML313)) {
+            self::$PYTHONML313 = new BuildRuntime('python-ml-3.13');
+        }
+        return self::$PYTHONML313;
     }
     public static function DENO121(): BuildRuntime
     {
@@ -288,6 +371,20 @@ class BuildRuntime implements JsonSerializable
             self::$DENO20 = new BuildRuntime('deno-2.0');
         }
         return self::$DENO20;
+    }
+    public static function DENO25(): BuildRuntime
+    {
+        if (!isset(self::$DENO25)) {
+            self::$DENO25 = new BuildRuntime('deno-2.5');
+        }
+        return self::$DENO25;
+    }
+    public static function DENO26(): BuildRuntime
+    {
+        if (!isset(self::$DENO26)) {
+            self::$DENO26 = new BuildRuntime('deno-2.6');
+        }
+        return self::$DENO26;
     }
     public static function DART215(): BuildRuntime
     {
@@ -394,6 +491,13 @@ class BuildRuntime implements JsonSerializable
         }
         return self::$DOTNET80;
     }
+    public static function DOTNET10(): BuildRuntime
+    {
+        if (!isset(self::$DOTNET10)) {
+            self::$DOTNET10 = new BuildRuntime('dotnet-10');
+        }
+        return self::$DOTNET10;
+    }
     public static function JAVA80(): BuildRuntime
     {
         if (!isset(self::$JAVA80)) {
@@ -436,6 +540,13 @@ class BuildRuntime implements JsonSerializable
         }
         return self::$JAVA22;
     }
+    public static function JAVA25(): BuildRuntime
+    {
+        if (!isset(self::$JAVA25)) {
+            self::$JAVA25 = new BuildRuntime('java-25');
+        }
+        return self::$JAVA25;
+    }
     public static function SWIFT55(): BuildRuntime
     {
         if (!isset(self::$SWIFT55)) {
@@ -463,6 +574,13 @@ class BuildRuntime implements JsonSerializable
             self::$SWIFT510 = new BuildRuntime('swift-5.10');
         }
         return self::$SWIFT510;
+    }
+    public static function SWIFT62(): BuildRuntime
+    {
+        if (!isset(self::$SWIFT62)) {
+            self::$SWIFT62 = new BuildRuntime('swift-6.2');
+        }
+        return self::$SWIFT62;
     }
     public static function KOTLIN16(): BuildRuntime
     {
@@ -492,6 +610,13 @@ class BuildRuntime implements JsonSerializable
         }
         return self::$KOTLIN20;
     }
+    public static function KOTLIN23(): BuildRuntime
+    {
+        if (!isset(self::$KOTLIN23)) {
+            self::$KOTLIN23 = new BuildRuntime('kotlin-2.3');
+        }
+        return self::$KOTLIN23;
+    }
     public static function CPP17(): BuildRuntime
     {
         if (!isset(self::$CPP17)) {
@@ -520,12 +645,47 @@ class BuildRuntime implements JsonSerializable
         }
         return self::$BUN11;
     }
+    public static function BUN12(): BuildRuntime
+    {
+        if (!isset(self::$BUN12)) {
+            self::$BUN12 = new BuildRuntime('bun-1.2');
+        }
+        return self::$BUN12;
+    }
+    public static function BUN13(): BuildRuntime
+    {
+        if (!isset(self::$BUN13)) {
+            self::$BUN13 = new BuildRuntime('bun-1.3');
+        }
+        return self::$BUN13;
+    }
     public static function GO123(): BuildRuntime
     {
         if (!isset(self::$GO123)) {
             self::$GO123 = new BuildRuntime('go-1.23');
         }
         return self::$GO123;
+    }
+    public static function GO124(): BuildRuntime
+    {
+        if (!isset(self::$GO124)) {
+            self::$GO124 = new BuildRuntime('go-1.24');
+        }
+        return self::$GO124;
+    }
+    public static function GO125(): BuildRuntime
+    {
+        if (!isset(self::$GO125)) {
+            self::$GO125 = new BuildRuntime('go-1.25');
+        }
+        return self::$GO125;
+    }
+    public static function GO126(): BuildRuntime
+    {
+        if (!isset(self::$GO126)) {
+            self::$GO126 = new BuildRuntime('go-1.26');
+        }
+        return self::$GO126;
     }
     public static function STATIC1(): BuildRuntime
     {

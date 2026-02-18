@@ -159,6 +159,22 @@ class Client
         return $this;
     }
 
+    /**
+     * Set Platform
+     *
+     * The platform type (Appwrite or Imagine)
+     *
+     * @param string $value
+     *
+     * @return Client
+     */
+    public function setPlatform(string $value): Client
+    {
+        $this->addHeader('X-Appwrite-Platform', $value);
+
+        return $this;
+    }
+
 
     /***
      * @param bool $status

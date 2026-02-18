@@ -51,7 +51,13 @@ final class ProjectTest extends TestCase {
             "databasesReads" => array(),
             "databasesWrites" => array(),
             "imageTransformations" => array(),
-            "imageTransformationsTotal" => 0);
+            "imageTransformationsTotal" => 0,
+            "networkTotal" => 0,
+            "backupsStorageTotal" => 0,
+            "screenshotsGenerated" => array(),
+            "screenshotsGeneratedTotal" => 0,
+            "imagineCredits" => array(),
+            "imagineCreditsTotal" => 0);
 
         $this->client
             ->allows()->call(Mockery::any(), Mockery::any(), Mockery::any(), Mockery::any())

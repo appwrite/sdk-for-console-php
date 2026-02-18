@@ -12,6 +12,7 @@ use Appwrite\Enums\AuthMethod;
 use Appwrite\Enums\Scopes;
 use Appwrite\Enums\OAuthProvider;
 use Appwrite\Enums\PlatformType;
+use Appwrite\Enums\ResourceType;
 use Appwrite\Enums\ApiService;
 use Appwrite\Enums\SMTPSecure;
 use Appwrite\Enums\EmailTemplateType;
@@ -1361,6 +1362,120 @@ class Projects extends Service
 
         return $this->client->call(
             Client::METHOD_DELETE,
+            $apiPath,
+            $apiHeaders,
+            $apiParams
+        );
+    }
+
+    /**
+     * Get a list of all the project's schedules. You can use the query params to
+     * filter your results.
+     *
+     * @param string $projectId
+     * @param ?array $queries
+     * @param ?bool $total
+     * @throws AppwriteException
+     * @return array
+     */
+    public function listSchedules(string $projectId, ?array $queries = null, ?bool $total = null): array
+    {
+        $apiPath = str_replace(
+            ['{projectId}'],
+            [$projectId],
+            '/projects/{projectId}/schedules'
+        );
+
+        $apiParams = [];
+        $apiParams['projectId'] = $projectId;
+
+        if (!is_null($queries)) {
+            $apiParams['queries'] = $queries;
+        }
+
+        if (!is_null($total)) {
+            $apiParams['total'] = $total;
+        }
+
+        $apiHeaders = [];
+
+        return $this->client->call(
+            Client::METHOD_GET,
+            $apiPath,
+            $apiHeaders,
+            $apiParams
+        );
+    }
+
+    /**
+     * Create a new schedule for a resource.
+     *
+     * @param string $projectId
+     * @param ResourceType $resourceType
+     * @param string $resourceId
+     * @param string $schedule
+     * @param ?bool $active
+     * @param ?array $data
+     * @throws AppwriteException
+     * @return array
+     */
+    public function createSchedule(string $projectId, ResourceType $resourceType, string $resourceId, string $schedule, ?bool $active = null, ?array $data = null): array
+    {
+        $apiPath = str_replace(
+            ['{projectId}'],
+            [$projectId],
+            '/projects/{projectId}/schedules'
+        );
+
+        $apiParams = [];
+        $apiParams['projectId'] = $projectId;
+        $apiParams['resourceType'] = $resourceType;
+        $apiParams['resourceId'] = $resourceId;
+        $apiParams['schedule'] = $schedule;
+
+        if (!is_null($active)) {
+            $apiParams['active'] = $active;
+        }
+
+        if (!is_null($data)) {
+            $apiParams['data'] = $data;
+        }
+
+        $apiHeaders = [];
+        $apiHeaders['content-type'] = 'application/json';
+
+        return $this->client->call(
+            Client::METHOD_POST,
+            $apiPath,
+            $apiHeaders,
+            $apiParams
+        );
+    }
+
+    /**
+     * Get a schedule by its unique ID.
+     *
+     * @param string $projectId
+     * @param string $scheduleId
+     * @throws AppwriteException
+     * @return array
+     */
+    public function getSchedule(string $projectId, string $scheduleId): array
+    {
+        $apiPath = str_replace(
+            ['{projectId}', '{scheduleId}'],
+            [$projectId, $scheduleId],
+            '/projects/{projectId}/schedules/{scheduleId}'
+        );
+
+        $apiParams = [];
+        $apiParams['projectId'] = $projectId;
+        $apiParams['scheduleId'] = $scheduleId;
+
+        $apiHeaders = [];
+
+        return $this->client->call(
+            Client::METHOD_GET,
             $apiPath,
             $apiHeaders,
             $apiParams

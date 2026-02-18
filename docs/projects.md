@@ -29,7 +29,7 @@ POST https://cloud.appwrite.io/v1/projects
 | projectId | string | Unique Id. Choose a custom ID or generate a random ID with `ID.unique()`. Valid chars are a-z, and hyphen. Can't start with a special char. Max length is 36 chars. |  |
 | name | string | Project name. Max length: 128 chars. |  |
 | teamId | string | Team unique ID. |  |
-| region | string | Project Region. | default |
+| region | string | Project Region. | fra |
 | description | string | Project description. Max length: 256 chars. |  |
 | logo | string | Project logo. |  |
 | url | string | Project URL. |  |
@@ -577,6 +577,53 @@ DELETE https://cloud.appwrite.io/v1/projects/{projectId}/platforms/{platformId}
 | --- | --- | --- | --- |
 | projectId | string | **Required** Project unique ID. |  |
 | platformId | string | **Required** Platform unique ID. |  |
+
+
+```http request
+GET https://cloud.appwrite.io/v1/projects/{projectId}/schedules
+```
+
+** Get a list of all the project&#039;s schedules. You can use the query params to filter your results. **
+
+### Parameters
+
+| Field Name | Type | Description | Default |
+| --- | --- | --- | --- |
+| projectId | string | **Required** Project unique ID. |  |
+| queries | array | Array of query strings generated using the Query class provided by the SDK. [Learn more about queries](https://appwrite.io/docs/queries). Maximum of 100 queries are allowed, each 4096 characters long. You may filter on the following attributes: resourceType, resourceId, projectId, schedule, active, region | [] |
+| total | boolean | When set to false, the total count returned will be 0 and will not be calculated. | 1 |
+
+
+```http request
+POST https://cloud.appwrite.io/v1/projects/{projectId}/schedules
+```
+
+** Create a new schedule for a resource. **
+
+### Parameters
+
+| Field Name | Type | Description | Default |
+| --- | --- | --- | --- |
+| projectId | string | **Required** Project unique ID. |  |
+| resourceType | string | The resource type for the schedule. Possible values: function, execution, message, backup. |  |
+| resourceId | string | The resource ID to associate with this schedule. |  |
+| schedule | string | Schedule CRON expression. |  |
+| active | boolean | Whether the schedule is active. |  |
+| data | object | Schedule data as a JSON string. Used to store resource-specific context needed for execution. | {} |
+
+
+```http request
+GET https://cloud.appwrite.io/v1/projects/{projectId}/schedules/{scheduleId}
+```
+
+** Get a schedule by its unique ID. **
+
+### Parameters
+
+| Field Name | Type | Description | Default |
+| --- | --- | --- | --- |
+| projectId | string | **Required** Project unique ID. |  |
+| scheduleId | string | **Required** Schedule ID. |  |
 
 
 ```http request

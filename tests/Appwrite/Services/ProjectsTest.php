@@ -12,6 +12,7 @@ use Appwrite\Enums\AuthMethod;
 use Appwrite\Enums\Scopes;
 use Appwrite\Enums\OAuthProvider;
 use Appwrite\Enums\PlatformType;
+use Appwrite\Enums\ResourceType;
 use Appwrite\Enums\ApiService;
 use Appwrite\Enums\SMTPSecure;
 use Appwrite\Enums\EmailTemplateType;
@@ -90,6 +91,7 @@ final class ProjectsTest extends TestCase {
             "pingCount" => 1,
             "pingedAt" => "2020-10-15T06:38:00.000+00:00",
             "labels" => array(),
+            "status" => "active",
             "authEmailPassword" => true,
             "authUsersAuthMagicURL" => true,
             "authEmailOtp" => true,
@@ -109,7 +111,10 @@ final class ProjectsTest extends TestCase {
             "serviceStatusForSites" => true,
             "serviceStatusForFunctions" => true,
             "serviceStatusForGraphql" => true,
-            "serviceStatusForMessaging" => true);
+            "serviceStatusForMessaging" => true,
+            "region" => "fra",
+            "billingLimits" => array(),
+            "blocks" => array());
 
         $this->client
             ->allows()->call(Mockery::any(), Mockery::any(), Mockery::any(), Mockery::any())
@@ -170,6 +175,7 @@ final class ProjectsTest extends TestCase {
             "pingCount" => 1,
             "pingedAt" => "2020-10-15T06:38:00.000+00:00",
             "labels" => array(),
+            "status" => "active",
             "authEmailPassword" => true,
             "authUsersAuthMagicURL" => true,
             "authEmailOtp" => true,
@@ -189,7 +195,10 @@ final class ProjectsTest extends TestCase {
             "serviceStatusForSites" => true,
             "serviceStatusForFunctions" => true,
             "serviceStatusForGraphql" => true,
-            "serviceStatusForMessaging" => true);
+            "serviceStatusForMessaging" => true,
+            "region" => "fra",
+            "billingLimits" => array(),
+            "blocks" => array());
 
         $this->client
             ->allows()->call(Mockery::any(), Mockery::any(), Mockery::any(), Mockery::any())
@@ -248,6 +257,7 @@ final class ProjectsTest extends TestCase {
             "pingCount" => 1,
             "pingedAt" => "2020-10-15T06:38:00.000+00:00",
             "labels" => array(),
+            "status" => "active",
             "authEmailPassword" => true,
             "authUsersAuthMagicURL" => true,
             "authEmailOtp" => true,
@@ -267,7 +277,10 @@ final class ProjectsTest extends TestCase {
             "serviceStatusForSites" => true,
             "serviceStatusForFunctions" => true,
             "serviceStatusForGraphql" => true,
-            "serviceStatusForMessaging" => true);
+            "serviceStatusForMessaging" => true,
+            "region" => "fra",
+            "billingLimits" => array(),
+            "blocks" => array());
 
         $this->client
             ->allows()->call(Mockery::any(), Mockery::any(), Mockery::any(), Mockery::any())
@@ -342,6 +355,7 @@ final class ProjectsTest extends TestCase {
             "pingCount" => 1,
             "pingedAt" => "2020-10-15T06:38:00.000+00:00",
             "labels" => array(),
+            "status" => "active",
             "authEmailPassword" => true,
             "authUsersAuthMagicURL" => true,
             "authEmailOtp" => true,
@@ -361,7 +375,10 @@ final class ProjectsTest extends TestCase {
             "serviceStatusForSites" => true,
             "serviceStatusForFunctions" => true,
             "serviceStatusForGraphql" => true,
-            "serviceStatusForMessaging" => true);
+            "serviceStatusForMessaging" => true,
+            "region" => "fra",
+            "billingLimits" => array(),
+            "blocks" => array());
 
         $this->client
             ->allows()->call(Mockery::any(), Mockery::any(), Mockery::any(), Mockery::any())
@@ -422,6 +439,7 @@ final class ProjectsTest extends TestCase {
             "pingCount" => 1,
             "pingedAt" => "2020-10-15T06:38:00.000+00:00",
             "labels" => array(),
+            "status" => "active",
             "authEmailPassword" => true,
             "authUsersAuthMagicURL" => true,
             "authEmailOtp" => true,
@@ -441,7 +459,10 @@ final class ProjectsTest extends TestCase {
             "serviceStatusForSites" => true,
             "serviceStatusForFunctions" => true,
             "serviceStatusForGraphql" => true,
-            "serviceStatusForMessaging" => true);
+            "serviceStatusForMessaging" => true,
+            "region" => "fra",
+            "billingLimits" => array(),
+            "blocks" => array());
 
         $this->client
             ->allows()->call(Mockery::any(), Mockery::any(), Mockery::any(), Mockery::any())
@@ -501,6 +522,7 @@ final class ProjectsTest extends TestCase {
             "pingCount" => 1,
             "pingedAt" => "2020-10-15T06:38:00.000+00:00",
             "labels" => array(),
+            "status" => "active",
             "authEmailPassword" => true,
             "authUsersAuthMagicURL" => true,
             "authEmailOtp" => true,
@@ -520,7 +542,10 @@ final class ProjectsTest extends TestCase {
             "serviceStatusForSites" => true,
             "serviceStatusForFunctions" => true,
             "serviceStatusForGraphql" => true,
-            "serviceStatusForMessaging" => true);
+            "serviceStatusForMessaging" => true,
+            "region" => "fra",
+            "billingLimits" => array(),
+            "blocks" => array());
 
         $this->client
             ->allows()->call(Mockery::any(), Mockery::any(), Mockery::any(), Mockery::any())
@@ -580,6 +605,7 @@ final class ProjectsTest extends TestCase {
             "pingCount" => 1,
             "pingedAt" => "2020-10-15T06:38:00.000+00:00",
             "labels" => array(),
+            "status" => "active",
             "authEmailPassword" => true,
             "authUsersAuthMagicURL" => true,
             "authEmailOtp" => true,
@@ -599,7 +625,10 @@ final class ProjectsTest extends TestCase {
             "serviceStatusForSites" => true,
             "serviceStatusForFunctions" => true,
             "serviceStatusForGraphql" => true,
-            "serviceStatusForMessaging" => true);
+            "serviceStatusForMessaging" => true,
+            "region" => "fra",
+            "billingLimits" => array(),
+            "blocks" => array());
 
         $this->client
             ->allows()->call(Mockery::any(), Mockery::any(), Mockery::any(), Mockery::any())
@@ -659,6 +688,7 @@ final class ProjectsTest extends TestCase {
             "pingCount" => 1,
             "pingedAt" => "2020-10-15T06:38:00.000+00:00",
             "labels" => array(),
+            "status" => "active",
             "authEmailPassword" => true,
             "authUsersAuthMagicURL" => true,
             "authEmailOtp" => true,
@@ -678,7 +708,10 @@ final class ProjectsTest extends TestCase {
             "serviceStatusForSites" => true,
             "serviceStatusForFunctions" => true,
             "serviceStatusForGraphql" => true,
-            "serviceStatusForMessaging" => true);
+            "serviceStatusForMessaging" => true,
+            "region" => "fra",
+            "billingLimits" => array(),
+            "blocks" => array());
 
         $this->client
             ->allows()->call(Mockery::any(), Mockery::any(), Mockery::any(), Mockery::any())
@@ -738,6 +771,7 @@ final class ProjectsTest extends TestCase {
             "pingCount" => 1,
             "pingedAt" => "2020-10-15T06:38:00.000+00:00",
             "labels" => array(),
+            "status" => "active",
             "authEmailPassword" => true,
             "authUsersAuthMagicURL" => true,
             "authEmailOtp" => true,
@@ -757,7 +791,10 @@ final class ProjectsTest extends TestCase {
             "serviceStatusForSites" => true,
             "serviceStatusForFunctions" => true,
             "serviceStatusForGraphql" => true,
-            "serviceStatusForMessaging" => true);
+            "serviceStatusForMessaging" => true,
+            "region" => "fra",
+            "billingLimits" => array(),
+            "blocks" => array());
 
         $this->client
             ->allows()->call(Mockery::any(), Mockery::any(), Mockery::any(), Mockery::any())
@@ -819,6 +856,7 @@ final class ProjectsTest extends TestCase {
             "pingCount" => 1,
             "pingedAt" => "2020-10-15T06:38:00.000+00:00",
             "labels" => array(),
+            "status" => "active",
             "authEmailPassword" => true,
             "authUsersAuthMagicURL" => true,
             "authEmailOtp" => true,
@@ -838,7 +876,10 @@ final class ProjectsTest extends TestCase {
             "serviceStatusForSites" => true,
             "serviceStatusForFunctions" => true,
             "serviceStatusForGraphql" => true,
-            "serviceStatusForMessaging" => true);
+            "serviceStatusForMessaging" => true,
+            "region" => "fra",
+            "billingLimits" => array(),
+            "blocks" => array());
 
         $this->client
             ->allows()->call(Mockery::any(), Mockery::any(), Mockery::any(), Mockery::any())
@@ -898,6 +939,7 @@ final class ProjectsTest extends TestCase {
             "pingCount" => 1,
             "pingedAt" => "2020-10-15T06:38:00.000+00:00",
             "labels" => array(),
+            "status" => "active",
             "authEmailPassword" => true,
             "authUsersAuthMagicURL" => true,
             "authEmailOtp" => true,
@@ -917,7 +959,10 @@ final class ProjectsTest extends TestCase {
             "serviceStatusForSites" => true,
             "serviceStatusForFunctions" => true,
             "serviceStatusForGraphql" => true,
-            "serviceStatusForMessaging" => true);
+            "serviceStatusForMessaging" => true,
+            "region" => "fra",
+            "billingLimits" => array(),
+            "blocks" => array());
 
         $this->client
             ->allows()->call(Mockery::any(), Mockery::any(), Mockery::any(), Mockery::any())
@@ -977,6 +1022,7 @@ final class ProjectsTest extends TestCase {
             "pingCount" => 1,
             "pingedAt" => "2020-10-15T06:38:00.000+00:00",
             "labels" => array(),
+            "status" => "active",
             "authEmailPassword" => true,
             "authUsersAuthMagicURL" => true,
             "authEmailOtp" => true,
@@ -996,7 +1042,10 @@ final class ProjectsTest extends TestCase {
             "serviceStatusForSites" => true,
             "serviceStatusForFunctions" => true,
             "serviceStatusForGraphql" => true,
-            "serviceStatusForMessaging" => true);
+            "serviceStatusForMessaging" => true,
+            "region" => "fra",
+            "billingLimits" => array(),
+            "blocks" => array());
 
         $this->client
             ->allows()->call(Mockery::any(), Mockery::any(), Mockery::any(), Mockery::any())
@@ -1056,6 +1105,7 @@ final class ProjectsTest extends TestCase {
             "pingCount" => 1,
             "pingedAt" => "2020-10-15T06:38:00.000+00:00",
             "labels" => array(),
+            "status" => "active",
             "authEmailPassword" => true,
             "authUsersAuthMagicURL" => true,
             "authEmailOtp" => true,
@@ -1075,7 +1125,10 @@ final class ProjectsTest extends TestCase {
             "serviceStatusForSites" => true,
             "serviceStatusForFunctions" => true,
             "serviceStatusForGraphql" => true,
-            "serviceStatusForMessaging" => true);
+            "serviceStatusForMessaging" => true,
+            "region" => "fra",
+            "billingLimits" => array(),
+            "blocks" => array());
 
         $this->client
             ->allows()->call(Mockery::any(), Mockery::any(), Mockery::any(), Mockery::any())
@@ -1135,6 +1188,7 @@ final class ProjectsTest extends TestCase {
             "pingCount" => 1,
             "pingedAt" => "2020-10-15T06:38:00.000+00:00",
             "labels" => array(),
+            "status" => "active",
             "authEmailPassword" => true,
             "authUsersAuthMagicURL" => true,
             "authEmailOtp" => true,
@@ -1154,7 +1208,10 @@ final class ProjectsTest extends TestCase {
             "serviceStatusForSites" => true,
             "serviceStatusForFunctions" => true,
             "serviceStatusForGraphql" => true,
-            "serviceStatusForMessaging" => true);
+            "serviceStatusForMessaging" => true,
+            "region" => "fra",
+            "billingLimits" => array(),
+            "blocks" => array());
 
         $this->client
             ->allows()->call(Mockery::any(), Mockery::any(), Mockery::any(), Mockery::any())
@@ -1214,6 +1271,7 @@ final class ProjectsTest extends TestCase {
             "pingCount" => 1,
             "pingedAt" => "2020-10-15T06:38:00.000+00:00",
             "labels" => array(),
+            "status" => "active",
             "authEmailPassword" => true,
             "authUsersAuthMagicURL" => true,
             "authEmailOtp" => true,
@@ -1233,7 +1291,10 @@ final class ProjectsTest extends TestCase {
             "serviceStatusForSites" => true,
             "serviceStatusForFunctions" => true,
             "serviceStatusForGraphql" => true,
-            "serviceStatusForMessaging" => true);
+            "serviceStatusForMessaging" => true,
+            "region" => "fra",
+            "billingLimits" => array(),
+            "blocks" => array());
 
         $this->client
             ->allows()->call(Mockery::any(), Mockery::any(), Mockery::any(), Mockery::any())
@@ -1293,6 +1354,7 @@ final class ProjectsTest extends TestCase {
             "pingCount" => 1,
             "pingedAt" => "2020-10-15T06:38:00.000+00:00",
             "labels" => array(),
+            "status" => "active",
             "authEmailPassword" => true,
             "authUsersAuthMagicURL" => true,
             "authEmailOtp" => true,
@@ -1312,7 +1374,10 @@ final class ProjectsTest extends TestCase {
             "serviceStatusForSites" => true,
             "serviceStatusForFunctions" => true,
             "serviceStatusForGraphql" => true,
-            "serviceStatusForMessaging" => true);
+            "serviceStatusForMessaging" => true,
+            "region" => "fra",
+            "billingLimits" => array(),
+            "blocks" => array());
 
         $this->client
             ->allows()->call(Mockery::any(), Mockery::any(), Mockery::any(), Mockery::any())
@@ -1609,6 +1674,7 @@ final class ProjectsTest extends TestCase {
             "pingCount" => 1,
             "pingedAt" => "2020-10-15T06:38:00.000+00:00",
             "labels" => array(),
+            "status" => "active",
             "authEmailPassword" => true,
             "authUsersAuthMagicURL" => true,
             "authEmailOtp" => true,
@@ -1628,7 +1694,10 @@ final class ProjectsTest extends TestCase {
             "serviceStatusForSites" => true,
             "serviceStatusForFunctions" => true,
             "serviceStatusForGraphql" => true,
-            "serviceStatusForMessaging" => true);
+            "serviceStatusForMessaging" => true,
+            "region" => "fra",
+            "billingLimits" => array(),
+            "blocks" => array());
 
         $this->client
             ->allows()->call(Mockery::any(), Mockery::any(), Mockery::any(), Mockery::any())
@@ -1688,6 +1757,7 @@ final class ProjectsTest extends TestCase {
             "pingCount" => 1,
             "pingedAt" => "2020-10-15T06:38:00.000+00:00",
             "labels" => array(),
+            "status" => "active",
             "authEmailPassword" => true,
             "authUsersAuthMagicURL" => true,
             "authEmailOtp" => true,
@@ -1707,7 +1777,10 @@ final class ProjectsTest extends TestCase {
             "serviceStatusForSites" => true,
             "serviceStatusForFunctions" => true,
             "serviceStatusForGraphql" => true,
-            "serviceStatusForMessaging" => true);
+            "serviceStatusForMessaging" => true,
+            "region" => "fra",
+            "billingLimits" => array(),
+            "blocks" => array());
 
         $this->client
             ->allows()->call(Mockery::any(), Mockery::any(), Mockery::any(), Mockery::any())
@@ -1834,6 +1907,79 @@ final class ProjectsTest extends TestCase {
         $this->assertSame($data, $response);
     }
 
+    public function testMethodListSchedules(): void {
+
+        $data = array(
+            "total" => 5,
+            "schedules" => array());
+
+        $this->client
+            ->allows()->call(Mockery::any(), Mockery::any(), Mockery::any(), Mockery::any())
+            ->andReturn($data);
+
+        $response = $this->projects->listSchedules(
+            "<PROJECT_ID>"
+        );
+
+        $this->assertSame($data, $response);
+    }
+
+    public function testMethodCreateSchedule(): void {
+
+        $data = array(
+            "\$id" => "5e5ea5c16897e",
+            "\$createdAt" => "2020-10-15T06:38:00.000+00:00",
+            "\$updatedAt" => "2020-10-15T06:38:00.000+00:00",
+            "resourceType" => "function",
+            "resourceId" => "5e5ea5c16897e",
+            "resourceUpdatedAt" => "2020-10-15T06:38:00.000+00:00",
+            "projectId" => "5e5ea5c16897e",
+            "schedule" => "5 4 * * *",
+            "data" => array(),
+            "active" => true,
+            "region" => "fra");
+
+        $this->client
+            ->allows()->call(Mockery::any(), Mockery::any(), Mockery::any(), Mockery::any())
+            ->andReturn($data);
+
+        $response = $this->projects->createSchedule(
+            "<PROJECT_ID>",
+            ResourceType::FUNCTION(),
+            "<RESOURCE_ID>",
+            ""
+        );
+
+        $this->assertSame($data, $response);
+    }
+
+    public function testMethodGetSchedule(): void {
+
+        $data = array(
+            "\$id" => "5e5ea5c16897e",
+            "\$createdAt" => "2020-10-15T06:38:00.000+00:00",
+            "\$updatedAt" => "2020-10-15T06:38:00.000+00:00",
+            "resourceType" => "function",
+            "resourceId" => "5e5ea5c16897e",
+            "resourceUpdatedAt" => "2020-10-15T06:38:00.000+00:00",
+            "projectId" => "5e5ea5c16897e",
+            "schedule" => "5 4 * * *",
+            "data" => array(),
+            "active" => true,
+            "region" => "fra");
+
+        $this->client
+            ->allows()->call(Mockery::any(), Mockery::any(), Mockery::any(), Mockery::any())
+            ->andReturn($data);
+
+        $response = $this->projects->getSchedule(
+            "<PROJECT_ID>",
+            "<SCHEDULE_ID>"
+        );
+
+        $this->assertSame($data, $response);
+    }
+
     public function testMethodUpdateServiceStatus(): void {
 
         $data = array(
@@ -1880,6 +2026,7 @@ final class ProjectsTest extends TestCase {
             "pingCount" => 1,
             "pingedAt" => "2020-10-15T06:38:00.000+00:00",
             "labels" => array(),
+            "status" => "active",
             "authEmailPassword" => true,
             "authUsersAuthMagicURL" => true,
             "authEmailOtp" => true,
@@ -1899,7 +2046,10 @@ final class ProjectsTest extends TestCase {
             "serviceStatusForSites" => true,
             "serviceStatusForFunctions" => true,
             "serviceStatusForGraphql" => true,
-            "serviceStatusForMessaging" => true);
+            "serviceStatusForMessaging" => true,
+            "region" => "fra",
+            "billingLimits" => array(),
+            "blocks" => array());
 
         $this->client
             ->allows()->call(Mockery::any(), Mockery::any(), Mockery::any(), Mockery::any())
@@ -1960,6 +2110,7 @@ final class ProjectsTest extends TestCase {
             "pingCount" => 1,
             "pingedAt" => "2020-10-15T06:38:00.000+00:00",
             "labels" => array(),
+            "status" => "active",
             "authEmailPassword" => true,
             "authUsersAuthMagicURL" => true,
             "authEmailOtp" => true,
@@ -1979,7 +2130,10 @@ final class ProjectsTest extends TestCase {
             "serviceStatusForSites" => true,
             "serviceStatusForFunctions" => true,
             "serviceStatusForGraphql" => true,
-            "serviceStatusForMessaging" => true);
+            "serviceStatusForMessaging" => true,
+            "region" => "fra",
+            "billingLimits" => array(),
+            "blocks" => array());
 
         $this->client
             ->allows()->call(Mockery::any(), Mockery::any(), Mockery::any(), Mockery::any())
@@ -2039,6 +2193,7 @@ final class ProjectsTest extends TestCase {
             "pingCount" => 1,
             "pingedAt" => "2020-10-15T06:38:00.000+00:00",
             "labels" => array(),
+            "status" => "active",
             "authEmailPassword" => true,
             "authUsersAuthMagicURL" => true,
             "authEmailOtp" => true,
@@ -2058,7 +2213,10 @@ final class ProjectsTest extends TestCase {
             "serviceStatusForSites" => true,
             "serviceStatusForFunctions" => true,
             "serviceStatusForGraphql" => true,
-            "serviceStatusForMessaging" => true);
+            "serviceStatusForMessaging" => true,
+            "region" => "fra",
+            "billingLimits" => array(),
+            "blocks" => array());
 
         $this->client
             ->allows()->call(Mockery::any(), Mockery::any(), Mockery::any(), Mockery::any())
@@ -2137,6 +2295,7 @@ final class ProjectsTest extends TestCase {
             "pingCount" => 1,
             "pingedAt" => "2020-10-15T06:38:00.000+00:00",
             "labels" => array(),
+            "status" => "active",
             "authEmailPassword" => true,
             "authUsersAuthMagicURL" => true,
             "authEmailOtp" => true,
@@ -2156,7 +2315,10 @@ final class ProjectsTest extends TestCase {
             "serviceStatusForSites" => true,
             "serviceStatusForFunctions" => true,
             "serviceStatusForGraphql" => true,
-            "serviceStatusForMessaging" => true);
+            "serviceStatusForMessaging" => true,
+            "region" => "fra",
+            "billingLimits" => array(),
+            "blocks" => array());
 
         $this->client
             ->allows()->call(Mockery::any(), Mockery::any(), Mockery::any(), Mockery::any())

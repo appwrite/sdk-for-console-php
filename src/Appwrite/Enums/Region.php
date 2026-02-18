@@ -6,7 +6,12 @@ use JsonSerializable;
 
 class Region implements JsonSerializable
 {
-    private static Region $DEFAULT;
+    private static Region $FRA;
+    private static Region $NYC;
+    private static Region $SYD;
+    private static Region $SFO;
+    private static Region $SGP;
+    private static Region $TOR;
 
     private string $value;
 
@@ -25,11 +30,46 @@ class Region implements JsonSerializable
         return $this->value;
     }
 
-    public static function DEFAULT(): Region
+    public static function FRA(): Region
     {
-        if (!isset(self::$DEFAULT)) {
-            self::$DEFAULT = new Region('default');
+        if (!isset(self::$FRA)) {
+            self::$FRA = new Region('fra');
         }
-        return self::$DEFAULT;
+        return self::$FRA;
+    }
+    public static function NYC(): Region
+    {
+        if (!isset(self::$NYC)) {
+            self::$NYC = new Region('nyc');
+        }
+        return self::$NYC;
+    }
+    public static function SYD(): Region
+    {
+        if (!isset(self::$SYD)) {
+            self::$SYD = new Region('syd');
+        }
+        return self::$SYD;
+    }
+    public static function SFO(): Region
+    {
+        if (!isset(self::$SFO)) {
+            self::$SFO = new Region('sfo');
+        }
+        return self::$SFO;
+    }
+    public static function SGP(): Region
+    {
+        if (!isset(self::$SGP)) {
+            self::$SGP = new Region('sgp');
+        }
+        return self::$SGP;
+    }
+    public static function TOR(): Region
+    {
+        if (!isset(self::$TOR)) {
+            self::$TOR = new Region('tor');
+        }
+        return self::$TOR;
     }
 }

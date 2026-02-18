@@ -15,7 +15,7 @@ $result = $projects->create(
     projectId: '',
     name: '<NAME>',
     teamId: '<TEAM_ID>',
-    region: Region::DEFAULT(), // optional
+    region: Region::FRA(), // optional
     description: '<DESCRIPTION>', // optional
     logo: '<LOGO>', // optional
     url: 'https://example.com', // optional
