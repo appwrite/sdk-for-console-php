@@ -9,6 +9,7 @@ class ResourceType implements JsonSerializable
     private static ResourceType $FUNCTION;
     private static ResourceType $EXECUTION;
     private static ResourceType $MESSAGE;
+    private static ResourceType $BACKUP;
 
     private string $value;
 
@@ -47,5 +48,12 @@ class ResourceType implements JsonSerializable
             self::$MESSAGE = new ResourceType('message');
         }
         return self::$MESSAGE;
+    }
+    public static function BACKUP(): ResourceType
+    {
+        if (!isset(self::$BACKUP)) {
+            self::$BACKUP = new ResourceType('backup');
+        }
+        return self::$BACKUP;
     }
 }

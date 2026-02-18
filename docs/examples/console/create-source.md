@@ -1,0 +1,19 @@
+```php
+<?php
+
+use Appwrite\Client;
+use Appwrite\Services\Console;
+
+$client = (new Client())
+    ->setEndpoint('https://<REGION>.cloud.appwrite.io/v1') // Your API Endpoint
+    ->setProject('<YOUR_PROJECT_ID>'); // Your project ID
+
+$console = new Console($client);
+
+$result = $console->createSource(
+    ref: '<REF>', // optional
+    referrer: 'https://example.com', // optional
+    utmSource: '<UTM_SOURCE>', // optional
+    utmCampaign: '<UTM_CAMPAIGN>', // optional
+    utmMedium: '<UTM_MEDIUM>' // optional
+);```

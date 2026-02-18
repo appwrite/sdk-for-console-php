@@ -6,6 +6,7 @@ use Appwrite\AppwriteException;
 use Appwrite\Client;
 use Appwrite\Service;
 use Appwrite\InputFile;
+use Appwrite\Enums\Scopes;
 use Appwrite\Enums\AuthenticatorType;
 use Appwrite\Enums\AuthenticationFactor;
 use Appwrite\Enums\OAuthProvider;
@@ -108,6 +109,220 @@ class Account extends Service
 
         return $this->client->call(
             Client::METHOD_DELETE,
+            $apiPath,
+            $apiHeaders,
+            $apiParams
+        );
+    }
+
+    /**
+     * List all billing addresses for a user.
+     *
+     * @param ?array $queries
+     * @throws AppwriteException
+     * @return array
+     */
+    public function listBillingAddresses(?array $queries = null): array
+    {
+        $apiPath = str_replace(
+            [],
+            [],
+            '/account/billing-addresses'
+        );
+
+        $apiParams = [];
+
+        if (!is_null($queries)) {
+            $apiParams['queries'] = $queries;
+        }
+
+        $apiHeaders = [];
+
+        return $this->client->call(
+            Client::METHOD_GET,
+            $apiPath,
+            $apiHeaders,
+            $apiParams
+        );
+    }
+
+    /**
+     * Add a new billing address to a user's account.
+     *
+     * @param string $country
+     * @param string $city
+     * @param string $streetAddress
+     * @param ?string $addressLine2
+     * @param ?string $state
+     * @param ?string $postalCode
+     * @throws AppwriteException
+     * @return array
+     */
+    public function createBillingAddress(string $country, string $city, string $streetAddress, ?string $addressLine2 = null, ?string $state = null, ?string $postalCode = null): array
+    {
+        $apiPath = str_replace(
+            [],
+            [],
+            '/account/billing-addresses'
+        );
+
+        $apiParams = [];
+        $apiParams['country'] = $country;
+        $apiParams['city'] = $city;
+        $apiParams['streetAddress'] = $streetAddress;
+
+        if (!is_null($addressLine2)) {
+            $apiParams['addressLine2'] = $addressLine2;
+        }
+
+        if (!is_null($state)) {
+            $apiParams['state'] = $state;
+        }
+
+        if (!is_null($postalCode)) {
+            $apiParams['postalCode'] = $postalCode;
+        }
+
+        $apiHeaders = [];
+        $apiHeaders['content-type'] = 'application/json';
+
+        return $this->client->call(
+            Client::METHOD_POST,
+            $apiPath,
+            $apiHeaders,
+            $apiParams
+        );
+    }
+
+    /**
+     * Get a specific billing address for a user using it's ID.
+     *
+     * @param string $billingAddressId
+     * @throws AppwriteException
+     * @return array
+     */
+    public function getBillingAddress(string $billingAddressId): array
+    {
+        $apiPath = str_replace(
+            ['{billingAddressId}'],
+            [$billingAddressId],
+            '/account/billing-addresses/{billingAddressId}'
+        );
+
+        $apiParams = [];
+        $apiParams['billingAddressId'] = $billingAddressId;
+
+        $apiHeaders = [];
+
+        return $this->client->call(
+            Client::METHOD_GET,
+            $apiPath,
+            $apiHeaders,
+            $apiParams
+        );
+    }
+
+    /**
+     * Update a specific billing address using it's ID.
+     *
+     * @param string $billingAddressId
+     * @param string $country
+     * @param string $city
+     * @param string $streetAddress
+     * @param ?string $addressLine2
+     * @param ?string $state
+     * @param ?string $postalCode
+     * @throws AppwriteException
+     * @return array
+     */
+    public function updateBillingAddress(string $billingAddressId, string $country, string $city, string $streetAddress, ?string $addressLine2 = null, ?string $state = null, ?string $postalCode = null): array
+    {
+        $apiPath = str_replace(
+            ['{billingAddressId}'],
+            [$billingAddressId],
+            '/account/billing-addresses/{billingAddressId}'
+        );
+
+        $apiParams = [];
+        $apiParams['billingAddressId'] = $billingAddressId;
+        $apiParams['country'] = $country;
+        $apiParams['city'] = $city;
+        $apiParams['streetAddress'] = $streetAddress;
+
+        if (!is_null($addressLine2)) {
+            $apiParams['addressLine2'] = $addressLine2;
+        }
+
+        if (!is_null($state)) {
+            $apiParams['state'] = $state;
+        }
+
+        if (!is_null($postalCode)) {
+            $apiParams['postalCode'] = $postalCode;
+        }
+
+        $apiHeaders = [];
+        $apiHeaders['content-type'] = 'application/json';
+
+        return $this->client->call(
+            Client::METHOD_PUT,
+            $apiPath,
+            $apiHeaders,
+            $apiParams
+        );
+    }
+
+    /**
+     * Delete a specific billing address using it's ID.
+     *
+     * @param string $billingAddressId
+     * @throws AppwriteException
+     * @return string
+     */
+    public function deleteBillingAddress(string $billingAddressId): string
+    {
+        $apiPath = str_replace(
+            ['{billingAddressId}'],
+            [$billingAddressId],
+            '/account/billing-addresses/{billingAddressId}'
+        );
+
+        $apiParams = [];
+        $apiParams['billingAddressId'] = $billingAddressId;
+
+        $apiHeaders = [];
+        $apiHeaders['content-type'] = 'application/json';
+
+        return $this->client->call(
+            Client::METHOD_DELETE,
+            $apiPath,
+            $apiHeaders,
+            $apiParams
+        );
+    }
+
+    /**
+     * Get coupon details for an account.
+     *
+     * @param string $couponId
+     * @throws AppwriteException
+     * @return array
+     */
+    public function getCoupon(string $couponId): array
+    {
+        $apiPath = str_replace(
+            ['{couponId}'],
+            [$couponId],
+            '/account/coupons/{couponId}'
+        );
+
+        $apiParams = [];
+        $apiParams['couponId'] = $couponId;
+
+        $apiHeaders = [];
+
+        return $this->client->call(
+            Client::METHOD_GET,
             $apiPath,
             $apiHeaders,
             $apiParams
@@ -218,6 +433,37 @@ class Account extends Service
     }
 
     /**
+     * List all invoices tied to an account.
+     *
+     * @param ?array $queries
+     * @throws AppwriteException
+     * @return array
+     */
+    public function listInvoices(?array $queries = null): array
+    {
+        $apiPath = str_replace(
+            [],
+            [],
+            '/account/invoices'
+        );
+
+        $apiParams = [];
+
+        if (!is_null($queries)) {
+            $apiParams['queries'] = $queries;
+        }
+
+        $apiHeaders = [];
+
+        return $this->client->call(
+            Client::METHOD_GET,
+            $apiPath,
+            $apiHeaders,
+            $apiParams
+        );
+    }
+
+    /**
      * Use this endpoint to create a JSON Web Token. You can use the resulting JWT
      * to authenticate on behalf of the current user when working with the
      * Appwrite server-side API and SDKs. The JWT secret is valid for 15 minutes
@@ -247,6 +493,165 @@ class Account extends Service
 
         return $this->client->call(
             Client::METHOD_POST,
+            $apiPath,
+            $apiHeaders,
+            $apiParams
+        );
+    }
+
+    /**
+     * Get a list of all API keys from the current account. 
+     *
+     * @param ?bool $total
+     * @throws AppwriteException
+     * @return array
+     */
+    public function listKeys(?bool $total = null): array
+    {
+        $apiPath = str_replace(
+            [],
+            [],
+            '/account/keys'
+        );
+
+        $apiParams = [];
+
+        if (!is_null($total)) {
+            $apiParams['total'] = $total;
+        }
+
+        $apiHeaders = [];
+
+        return $this->client->call(
+            Client::METHOD_GET,
+            $apiPath,
+            $apiHeaders,
+            $apiParams
+        );
+    }
+
+    /**
+     * Create a new account API key.
+     *
+     * @param string $name
+     * @param array $scopes
+     * @param ?string $expire
+     * @throws AppwriteException
+     * @return array
+     */
+    public function createKey(string $name, array $scopes, ?string $expire = null): array
+    {
+        $apiPath = str_replace(
+            [],
+            [],
+            '/account/keys'
+        );
+
+        $apiParams = [];
+        $apiParams['name'] = $name;
+        $apiParams['scopes'] = $scopes;
+        $apiParams['expire'] = $expire;
+
+        $apiHeaders = [];
+        $apiHeaders['content-type'] = 'application/json';
+
+        return $this->client->call(
+            Client::METHOD_POST,
+            $apiPath,
+            $apiHeaders,
+            $apiParams
+        );
+    }
+
+    /**
+     * Get a key by its unique ID. This endpoint returns details about a specific
+     * API key in your account including it's scopes.
+     *
+     * @param string $keyId
+     * @throws AppwriteException
+     * @return array
+     */
+    public function getKey(string $keyId): array
+    {
+        $apiPath = str_replace(
+            ['{keyId}'],
+            [$keyId],
+            '/account/keys/{keyId}'
+        );
+
+        $apiParams = [];
+        $apiParams['keyId'] = $keyId;
+
+        $apiHeaders = [];
+
+        return $this->client->call(
+            Client::METHOD_GET,
+            $apiPath,
+            $apiHeaders,
+            $apiParams
+        );
+    }
+
+    /**
+     * Update a key by its unique ID. Use this endpoint to update the name,
+     * scopes, or expiration time of an API key.
+     *
+     * @param string $keyId
+     * @param string $name
+     * @param array $scopes
+     * @param ?string $expire
+     * @throws AppwriteException
+     * @return array
+     */
+    public function updateKey(string $keyId, string $name, array $scopes, ?string $expire = null): array
+    {
+        $apiPath = str_replace(
+            ['{keyId}'],
+            [$keyId],
+            '/account/keys/{keyId}'
+        );
+
+        $apiParams = [];
+        $apiParams['keyId'] = $keyId;
+        $apiParams['name'] = $name;
+        $apiParams['scopes'] = $scopes;
+        $apiParams['expire'] = $expire;
+
+        $apiHeaders = [];
+        $apiHeaders['content-type'] = 'application/json';
+
+        return $this->client->call(
+            Client::METHOD_PUT,
+            $apiPath,
+            $apiHeaders,
+            $apiParams
+        );
+    }
+
+    /**
+     * Delete a key by its unique ID. Once deleted, the key can no longer be used
+     * to authenticate API calls.
+     *
+     * @param string $keyId
+     * @throws AppwriteException
+     * @return string
+     */
+    public function deleteKey(string $keyId): string
+    {
+        $apiPath = str_replace(
+            ['{keyId}'],
+            [$keyId],
+            '/account/keys/{keyId}'
+        );
+
+        $apiParams = [];
+        $apiParams['keyId'] = $keyId;
+
+        $apiHeaders = [];
+        $apiHeaders['content-type'] = 'application/json';
+
+        return $this->client->call(
+            Client::METHOD_DELETE,
             $apiPath,
             $apiHeaders,
             $apiParams
@@ -648,6 +1053,223 @@ class Account extends Service
         if (!is_null($oldPassword)) {
             $apiParams['oldPassword'] = $oldPassword;
         }
+
+        $apiHeaders = [];
+        $apiHeaders['content-type'] = 'application/json';
+
+        return $this->client->call(
+            Client::METHOD_PATCH,
+            $apiPath,
+            $apiHeaders,
+            $apiParams
+        );
+    }
+
+    /**
+     * List payment methods for this account.
+     *
+     * @param ?array $queries
+     * @throws AppwriteException
+     * @return array
+     */
+    public function listPaymentMethods(?array $queries = null): array
+    {
+        $apiPath = str_replace(
+            [],
+            [],
+            '/account/payment-methods'
+        );
+
+        $apiParams = [];
+
+        if (!is_null($queries)) {
+            $apiParams['queries'] = $queries;
+        }
+
+        $apiHeaders = [];
+
+        return $this->client->call(
+            Client::METHOD_GET,
+            $apiPath,
+            $apiHeaders,
+            $apiParams
+        );
+    }
+
+    /**
+     * Create a new payment method for the current user account.
+     *
+     * @throws AppwriteException
+     * @return array
+     */
+    public function createPaymentMethod(): array
+    {
+        $apiPath = str_replace(
+            [],
+            [],
+            '/account/payment-methods'
+        );
+
+        $apiParams = [];
+
+        $apiHeaders = [];
+        $apiHeaders['content-type'] = 'application/json';
+
+        return $this->client->call(
+            Client::METHOD_POST,
+            $apiPath,
+            $apiHeaders,
+            $apiParams
+        );
+    }
+
+    /**
+     * Get a specific payment method for the user.
+     *
+     * @param string $paymentMethodId
+     * @throws AppwriteException
+     * @return array
+     */
+    public function getPaymentMethod(string $paymentMethodId): array
+    {
+        $apiPath = str_replace(
+            ['{paymentMethodId}'],
+            [$paymentMethodId],
+            '/account/payment-methods/{paymentMethodId}'
+        );
+
+        $apiParams = [];
+        $apiParams['paymentMethodId'] = $paymentMethodId;
+
+        $apiHeaders = [];
+
+        return $this->client->call(
+            Client::METHOD_GET,
+            $apiPath,
+            $apiHeaders,
+            $apiParams
+        );
+    }
+
+    /**
+     * Update a new payment method for the current user account.
+     *
+     * @param string $paymentMethodId
+     * @param int $expiryMonth
+     * @param int $expiryYear
+     * @param ?string $state
+     * @throws AppwriteException
+     * @return array
+     */
+    public function updatePaymentMethod(string $paymentMethodId, int $expiryMonth, int $expiryYear, ?string $state = null): array
+    {
+        $apiPath = str_replace(
+            ['{paymentMethodId}'],
+            [$paymentMethodId],
+            '/account/payment-methods/{paymentMethodId}'
+        );
+
+        $apiParams = [];
+        $apiParams['paymentMethodId'] = $paymentMethodId;
+        $apiParams['expiryMonth'] = $expiryMonth;
+        $apiParams['expiryYear'] = $expiryYear;
+
+        if (!is_null($state)) {
+            $apiParams['state'] = $state;
+        }
+
+        $apiHeaders = [];
+        $apiHeaders['content-type'] = 'application/json';
+
+        return $this->client->call(
+            Client::METHOD_PATCH,
+            $apiPath,
+            $apiHeaders,
+            $apiParams
+        );
+    }
+
+    /**
+     * Delete a specific payment method from a user's account.
+     *
+     * @param string $paymentMethodId
+     * @throws AppwriteException
+     * @return string
+     */
+    public function deletePaymentMethod(string $paymentMethodId): string
+    {
+        $apiPath = str_replace(
+            ['{paymentMethodId}'],
+            [$paymentMethodId],
+            '/account/payment-methods/{paymentMethodId}'
+        );
+
+        $apiParams = [];
+        $apiParams['paymentMethodId'] = $paymentMethodId;
+
+        $apiHeaders = [];
+        $apiHeaders['content-type'] = 'application/json';
+
+        return $this->client->call(
+            Client::METHOD_DELETE,
+            $apiPath,
+            $apiHeaders,
+            $apiParams
+        );
+    }
+
+    /**
+     * Update payment method provider.
+     *
+     * @param string $paymentMethodId
+     * @param string $providerMethodId
+     * @param string $name
+     * @param ?string $state
+     * @throws AppwriteException
+     * @return array
+     */
+    public function updatePaymentMethodProvider(string $paymentMethodId, string $providerMethodId, string $name, ?string $state = null): array
+    {
+        $apiPath = str_replace(
+            ['{paymentMethodId}'],
+            [$paymentMethodId],
+            '/account/payment-methods/{paymentMethodId}/provider'
+        );
+
+        $apiParams = [];
+        $apiParams['paymentMethodId'] = $paymentMethodId;
+        $apiParams['providerMethodId'] = $providerMethodId;
+        $apiParams['name'] = $name;
+        $apiParams['state'] = $state;
+
+        $apiHeaders = [];
+        $apiHeaders['content-type'] = 'application/json';
+
+        return $this->client->call(
+            Client::METHOD_PATCH,
+            $apiPath,
+            $apiHeaders,
+            $apiParams
+        );
+    }
+
+    /**
+     * Update payment method mandate options.
+     *
+     * @param string $paymentMethodId
+     * @throws AppwriteException
+     * @return array
+     */
+    public function updatePaymentMethodMandateOptions(string $paymentMethodId): array
+    {
+        $apiPath = str_replace(
+            ['{paymentMethodId}'],
+            [$paymentMethodId],
+            '/account/payment-methods/{paymentMethodId}/setup'
+        );
+
+        $apiParams = [];
+        $apiParams['paymentMethodId'] = $paymentMethodId;
 
         $apiHeaders = [];
         $apiHeaders['content-type'] = 'application/json';

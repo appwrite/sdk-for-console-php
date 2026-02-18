@@ -32,6 +32,95 @@ DELETE https://cloud.appwrite.io/v1/account
 
 
 ```http request
+GET https://cloud.appwrite.io/v1/account/billing-addresses
+```
+
+** List all billing addresses for a user. **
+
+### Parameters
+
+| Field Name | Type | Description | Default |
+| --- | --- | --- | --- |
+| queries | array | Array of query strings generated using the Query class provided by the SDK. [Learn more about queries](https://appwrite.io/docs/databases#querying-documents). Maximum of 100 queries are allowed, each 4096 characters long. You may filter on the following attributes: userId, expired, failed | [] |
+
+
+```http request
+POST https://cloud.appwrite.io/v1/account/billing-addresses
+```
+
+** Add a new billing address to a user&#039;s account. **
+
+### Parameters
+
+| Field Name | Type | Description | Default |
+| --- | --- | --- | --- |
+| country | string | Country |  |
+| city | string | City |  |
+| streetAddress | string | Street address |  |
+| addressLine2 | string | Address line 2 |  |
+| state | string | State or province |  |
+| postalCode | string | Postal code |  |
+
+
+```http request
+GET https://cloud.appwrite.io/v1/account/billing-addresses/{billingAddressId}
+```
+
+** Get a specific billing address for a user using it&#039;s ID. **
+
+### Parameters
+
+| Field Name | Type | Description | Default |
+| --- | --- | --- | --- |
+| billingAddressId | string | **Required** Unique ID of billing address |  |
+
+
+```http request
+PUT https://cloud.appwrite.io/v1/account/billing-addresses/{billingAddressId}
+```
+
+** Update a specific billing address using it&#039;s ID. **
+
+### Parameters
+
+| Field Name | Type | Description | Default |
+| --- | --- | --- | --- |
+| billingAddressId | string | **Required** Unique ID of billing address |  |
+| country | string | Country |  |
+| city | string | City |  |
+| streetAddress | string | Street address |  |
+| addressLine2 | string | Address line 2 |  |
+| state | string | State or province |  |
+| postalCode | string | Postal code |  |
+
+
+```http request
+DELETE https://cloud.appwrite.io/v1/account/billing-addresses/{billingAddressId}
+```
+
+** Delete a specific billing address using it&#039;s ID. **
+
+### Parameters
+
+| Field Name | Type | Description | Default |
+| --- | --- | --- | --- |
+| billingAddressId | string | **Required** Billing address unique ID |  |
+
+
+```http request
+GET https://cloud.appwrite.io/v1/account/coupons/{couponId}
+```
+
+** Get coupon details for an account. **
+
+### Parameters
+
+| Field Name | Type | Description | Default |
+| --- | --- | --- | --- |
+| couponId | string | **Required** ID of the coupon |  |
+
+
+```http request
 PATCH https://cloud.appwrite.io/v1/account/email
 ```
 
@@ -75,6 +164,19 @@ DELETE https://cloud.appwrite.io/v1/account/identities/{identityId}
 
 
 ```http request
+GET https://cloud.appwrite.io/v1/account/invoices
+```
+
+** List all invoices tied to an account. **
+
+### Parameters
+
+| Field Name | Type | Description | Default |
+| --- | --- | --- | --- |
+| queries | array | Array of query strings generated using the Query class provided by the SDK. [Learn more about queries](https://appwrite.io/docs/databases#querying-documents). Maximum of 100 queries are allowed, each 4096 characters long. You may filter on the following attributes: teamId, aggregationId, amount, currency, from, to, dueAt, attempts, status, grossAmount | [] |
+
+
+```http request
 POST https://cloud.appwrite.io/v1/account/jwts
 ```
 
@@ -85,6 +187,76 @@ POST https://cloud.appwrite.io/v1/account/jwts
 | Field Name | Type | Description | Default |
 | --- | --- | --- | --- |
 | duration | integer | Time in seconds before JWT expires. Default duration is 900 seconds, and maximum is 3600 seconds. | 900 |
+
+
+```http request
+GET https://cloud.appwrite.io/v1/account/keys
+```
+
+** Get a list of all API keys from the current account.  **
+
+### Parameters
+
+| Field Name | Type | Description | Default |
+| --- | --- | --- | --- |
+| total | boolean | When set to false, the total count returned will be 0 and will not be calculated. | 1 |
+
+
+```http request
+POST https://cloud.appwrite.io/v1/account/keys
+```
+
+** Create a new account API key. **
+
+### Parameters
+
+| Field Name | Type | Description | Default |
+| --- | --- | --- | --- |
+| name | string | Key name. Max length: 128 chars. |  |
+| scopes | array | Key scopes list. Maximum of 100 scopes are allowed. |  |
+| expire | string | Expiration time in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Use null for unlimited expiration. |  |
+
+
+```http request
+GET https://cloud.appwrite.io/v1/account/keys/{keyId}
+```
+
+** Get a key by its unique ID. This endpoint returns details about a specific API key in your account including it&#039;s scopes. **
+
+### Parameters
+
+| Field Name | Type | Description | Default |
+| --- | --- | --- | --- |
+| keyId | string | **Required** Key unique ID. |  |
+
+
+```http request
+PUT https://cloud.appwrite.io/v1/account/keys/{keyId}
+```
+
+** Update a key by its unique ID. Use this endpoint to update the name, scopes, or expiration time of an API key. **
+
+### Parameters
+
+| Field Name | Type | Description | Default |
+| --- | --- | --- | --- |
+| keyId | string | **Required** Key unique ID. |  |
+| name | string | Key name. Max length: 128 chars. |  |
+| scopes | array | Key scopes list. Maximum of 100 scopes are allowed. |  |
+| expire | string | Expiration time in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Use null for unlimited expiration. |  |
+
+
+```http request
+DELETE https://cloud.appwrite.io/v1/account/keys/{keyId}
+```
+
+** Delete a key by its unique ID. Once deleted, the key can no longer be used to authenticate API calls. **
+
+### Parameters
+
+| Field Name | Type | Description | Default |
+| --- | --- | --- | --- |
+| keyId | string | **Required** Key unique ID. |  |
 
 
 ```http request
@@ -329,6 +501,97 @@ PATCH https://cloud.appwrite.io/v1/account/password
 | --- | --- | --- | --- |
 | password | string | New user password. Must be at least 8 chars. |  |
 | oldPassword | string | Current user password. Must be at least 8 chars. |  |
+
+
+```http request
+GET https://cloud.appwrite.io/v1/account/payment-methods
+```
+
+** List payment methods for this account. **
+
+### Parameters
+
+| Field Name | Type | Description | Default |
+| --- | --- | --- | --- |
+| queries | array | Array of query strings generated using the Query class provided by the SDK. [Learn more about queries](https://appwrite.io/docs/databases#querying-documents). Maximum of 100 queries are allowed, each 4096 characters long. You may filter on the following attributes: userId, expired, failed | [] |
+
+
+```http request
+POST https://cloud.appwrite.io/v1/account/payment-methods
+```
+
+** Create a new payment method for the current user account. **
+
+
+```http request
+GET https://cloud.appwrite.io/v1/account/payment-methods/{paymentMethodId}
+```
+
+** Get a specific payment method for the user. **
+
+### Parameters
+
+| Field Name | Type | Description | Default |
+| --- | --- | --- | --- |
+| paymentMethodId | string | **Required** Unique ID of payment method |  |
+
+
+```http request
+PATCH https://cloud.appwrite.io/v1/account/payment-methods/{paymentMethodId}
+```
+
+** Update a new payment method for the current user account. **
+
+### Parameters
+
+| Field Name | Type | Description | Default |
+| --- | --- | --- | --- |
+| paymentMethodId | string | **Required** Unique ID of payment method |  |
+| expiryMonth | integer | Payment expiry month |  |
+| expiryYear | integer | Expiry year |  |
+| state | string | State of the payment method country |  |
+
+
+```http request
+DELETE https://cloud.appwrite.io/v1/account/payment-methods/{paymentMethodId}
+```
+
+** Delete a specific payment method from a user&#039;s account. **
+
+### Parameters
+
+| Field Name | Type | Description | Default |
+| --- | --- | --- | --- |
+| paymentMethodId | string | **Required** Unique ID of payment method |  |
+
+
+```http request
+PATCH https://cloud.appwrite.io/v1/account/payment-methods/{paymentMethodId}/provider
+```
+
+** Update payment method provider. **
+
+### Parameters
+
+| Field Name | Type | Description | Default |
+| --- | --- | --- | --- |
+| paymentMethodId | string | **Required** Unique ID of payment method |  |
+| providerMethodId | string | Payment method ID from the payment provider |  |
+| name | string | Name in the payment method |  |
+| state | string | State of the payment method country |  |
+
+
+```http request
+PATCH https://cloud.appwrite.io/v1/account/payment-methods/{paymentMethodId}/setup
+```
+
+** Update payment method mandate options. **
+
+### Parameters
+
+| Field Name | Type | Description | Default |
+| --- | --- | --- | --- |
+| paymentMethodId | string | **Required** Unique ID of payment method |  |
 
 
 ```http request

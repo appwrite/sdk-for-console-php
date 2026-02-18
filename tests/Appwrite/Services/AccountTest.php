@@ -6,6 +6,7 @@ use Appwrite\Client;
 use Appwrite\InputFile;
 use Mockery;
 use PHPUnit\Framework\TestCase;
+use Appwrite\Enums\Scopes;
 use Appwrite\Enums\AuthenticatorType;
 use Appwrite\Enums\AuthenticationFactor;
 use Appwrite\Enums\OAuthProvider;
@@ -96,6 +97,134 @@ final class AccountTest extends TestCase {
         $this->assertSame($data, $response);
     }
 
+    public function testMethodListBillingAddresses(): void {
+
+        $data = array(
+            "total" => 5,
+            "billingAddresses" => array());
+
+        $this->client
+            ->allows()->call(Mockery::any(), Mockery::any(), Mockery::any(), Mockery::any())
+            ->andReturn($data);
+
+        $response = $this->account->listBillingAddresses(
+        );
+
+        $this->assertSame($data, $response);
+    }
+
+    public function testMethodCreateBillingAddress(): void {
+
+        $data = array(
+            "\$id" => "eu-fr",
+            "userId" => "5e5ea5c16897e",
+            "streetAddress" => "13th Avenue",
+            "addressLine2" => "",
+            "country" => "USA",
+            "city" => "",
+            "state" => "",
+            "postalCode" => "");
+
+        $this->client
+            ->allows()->call(Mockery::any(), Mockery::any(), Mockery::any(), Mockery::any())
+            ->andReturn($data);
+
+        $response = $this->account->createBillingAddress(
+            "<COUNTRY>",
+            "<CITY>",
+            "<STREET_ADDRESS>"
+        );
+
+        $this->assertSame($data, $response);
+    }
+
+    public function testMethodGetBillingAddress(): void {
+
+        $data = array(
+            "\$id" => "eu-fr",
+            "userId" => "5e5ea5c16897e",
+            "streetAddress" => "13th Avenue",
+            "addressLine2" => "",
+            "country" => "USA",
+            "city" => "",
+            "state" => "",
+            "postalCode" => "");
+
+        $this->client
+            ->allows()->call(Mockery::any(), Mockery::any(), Mockery::any(), Mockery::any())
+            ->andReturn($data);
+
+        $response = $this->account->getBillingAddress(
+            "<BILLING_ADDRESS_ID>"
+        );
+
+        $this->assertSame($data, $response);
+    }
+
+    public function testMethodUpdateBillingAddress(): void {
+
+        $data = array(
+            "\$id" => "eu-fr",
+            "userId" => "5e5ea5c16897e",
+            "streetAddress" => "13th Avenue",
+            "addressLine2" => "",
+            "country" => "USA",
+            "city" => "",
+            "state" => "",
+            "postalCode" => "");
+
+        $this->client
+            ->allows()->call(Mockery::any(), Mockery::any(), Mockery::any(), Mockery::any())
+            ->andReturn($data);
+
+        $response = $this->account->updateBillingAddress(
+            "<BILLING_ADDRESS_ID>",
+            "<COUNTRY>",
+            "<CITY>",
+            "<STREET_ADDRESS>"
+        );
+
+        $this->assertSame($data, $response);
+    }
+
+    public function testMethodDeleteBillingAddress(): void {
+
+        $data = '';
+
+        $this->client
+            ->allows()->call(Mockery::any(), Mockery::any(), Mockery::any(), Mockery::any())
+            ->andReturn($data);
+
+        $response = $this->account->deleteBillingAddress(
+            "<BILLING_ADDRESS_ID>"
+        );
+
+        $this->assertSame($data, $response);
+    }
+
+    public function testMethodGetCoupon(): void {
+
+        $data = array(
+            "\$id" => "NEWBONUS",
+            "code" => "NEWBONUS",
+            "credits" => 50,
+            "expiration" => "2020-10-15T06:38:00.000+00:00",
+            "validity" => 180,
+            "campaign" => "AppwriteHeroes",
+            "status" => "disabled",
+            "onlyNewOrgs" => true);
+
+        $this->client
+            ->allows()->call(Mockery::any(), Mockery::any(), Mockery::any(), Mockery::any())
+            ->andReturn($data);
+
+        $response = $this->account->getCoupon(
+            "<COUPON_ID>"
+        );
+
+        $this->assertSame($data, $response);
+    }
+
     public function testMethodUpdateEmail(): void {
 
         $data = array(
@@ -159,6 +288,22 @@ final class AccountTest extends TestCase {
         $this->assertSame($data, $response);
     }
 
+    public function testMethodListInvoices(): void {
+
+        $data = array(
+            "total" => 5,
+            "invoices" => array());
+
+        $this->client
+            ->allows()->call(Mockery::any(), Mockery::any(), Mockery::any(), Mockery::any())
+            ->andReturn($data);
+
+        $response = $this->account->listInvoices(
+        );
+
+        $this->assertSame($data, $response);
+    }
+
     public function testMethodCreateJWT(): void {
 
         $data = array(
@@ -169,6 +314,112 @@ final class AccountTest extends TestCase {
             ->andReturn($data);
 
         $response = $this->account->createJWT(
+        );
+
+        $this->assertSame($data, $response);
+    }
+
+    public function testMethodListKeys(): void {
+
+        $data = array(
+            "total" => 5,
+            "keys" => array());
+
+        $this->client
+            ->allows()->call(Mockery::any(), Mockery::any(), Mockery::any(), Mockery::any())
+            ->andReturn($data);
+
+        $response = $this->account->listKeys(
+        );
+
+        $this->assertSame($data, $response);
+    }
+
+    public function testMethodCreateKey(): void {
+
+        $data = array(
+            "\$id" => "5e5ea5c16897e",
+            "\$createdAt" => "2020-10-15T06:38:00.000+00:00",
+            "\$updatedAt" => "2020-10-15T06:38:00.000+00:00",
+            "name" => "My API Key",
+            "expire" => "2020-10-15T06:38:00.000+00:00",
+            "scopes" => array(),
+            "secret" => "919c2d18fb5d4...a2ae413da83346ad2",
+            "accessedAt" => "2020-10-15T06:38:00.000+00:00",
+            "sdks" => array());
+
+        $this->client
+            ->allows()->call(Mockery::any(), Mockery::any(), Mockery::any(), Mockery::any())
+            ->andReturn($data);
+
+        $response = $this->account->createKey(
+            "<NAME>",
+            array(Scopes::ACCOUNT())
+        );
+
+        $this->assertSame($data, $response);
+    }
+
+    public function testMethodGetKey(): void {
+
+        $data = array(
+            "\$id" => "5e5ea5c16897e",
+            "\$createdAt" => "2020-10-15T06:38:00.000+00:00",
+            "\$updatedAt" => "2020-10-15T06:38:00.000+00:00",
+            "name" => "My API Key",
+            "expire" => "2020-10-15T06:38:00.000+00:00",
+            "scopes" => array(),
+            "secret" => "919c2d18fb5d4...a2ae413da83346ad2",
+            "accessedAt" => "2020-10-15T06:38:00.000+00:00",
+            "sdks" => array());
+
+        $this->client
+            ->allows()->call(Mockery::any(), Mockery::any(), Mockery::any(), Mockery::any())
+            ->andReturn($data);
+
+        $response = $this->account->getKey(
+            "<KEY_ID>"
+        );
+
+        $this->assertSame($data, $response);
+    }
+
+    public function testMethodUpdateKey(): void {
+
+        $data = array(
+            "\$id" => "5e5ea5c16897e",
+            "\$createdAt" => "2020-10-15T06:38:00.000+00:00",
+            "\$updatedAt" => "2020-10-15T06:38:00.000+00:00",
+            "name" => "My API Key",
+            "expire" => "2020-10-15T06:38:00.000+00:00",
+            "scopes" => array(),
+            "secret" => "919c2d18fb5d4...a2ae413da83346ad2",
+            "accessedAt" => "2020-10-15T06:38:00.000+00:00",
+            "sdks" => array());
+
+        $this->client
+            ->allows()->call(Mockery::any(), Mockery::any(), Mockery::any(), Mockery::any())
+            ->andReturn($data);
+
+        $response = $this->account->updateKey(
+            "<KEY_ID>",
+            "<NAME>",
+            array(Scopes::ACCOUNT())
+        );
+
+        $this->assertSame($data, $response);
+    }
+
+    public function testMethodDeleteKey(): void {
+
+        $data = '';
+
+        $this->client
+            ->allows()->call(Mockery::any(), Mockery::any(), Mockery::any(), Mockery::any())
+            ->andReturn($data);
+
+        $response = $this->account->deleteKey(
+            "<KEY_ID>"
         );
 
         $this->assertSame($data, $response);
@@ -469,6 +720,215 @@ final class AccountTest extends TestCase {
 
         $response = $this->account->updatePassword(
             ""
+        );
+
+        $this->assertSame($data, $response);
+    }
+
+    public function testMethodListPaymentMethods(): void {
+
+        $data = array(
+            "total" => 5,
+            "paymentMethods" => array());
+
+        $this->client
+            ->allows()->call(Mockery::any(), Mockery::any(), Mockery::any(), Mockery::any())
+            ->andReturn($data);
+
+        $response = $this->account->listPaymentMethods(
+        );
+
+        $this->assertSame($data, $response);
+    }
+
+    public function testMethodCreatePaymentMethod(): void {
+
+        $data = array(
+            "\$id" => "5e5ea5c16897e",
+            "\$createdAt" => "2020-10-15T06:38:00.000+00:00",
+            "\$updatedAt" => "2020-10-15T06:38:00.000+00:00",
+            "\$permissions" => array(),
+            "providerMethodId" => "abdk3ed3sdkfj",
+            "clientSecret" => "seti_ddfe",
+            "providerUserId" => "abdk3ed3sdkfj",
+            "userId" => "5e5ea5c16897e",
+            "expiryMonth" => 2,
+            "expiryYear" => 2024,
+            "last4" => "4242",
+            "brand" => "visa",
+            "name" => "John Doe",
+            "mandateId" => "yxc",
+            "country" => "de",
+            "state" => "",
+            "lastError" => "Your card has insufficient funds.",
+            "default" => true,
+            "expired" => true,
+            "failed" => true);
+
+        $this->client
+            ->allows()->call(Mockery::any(), Mockery::any(), Mockery::any(), Mockery::any())
+            ->andReturn($data);
+
+        $response = $this->account->createPaymentMethod(
+        );
+
+        $this->assertSame($data, $response);
+    }
+
+    public function testMethodGetPaymentMethod(): void {
+
+        $data = array(
+            "\$id" => "5e5ea5c16897e",
+            "\$createdAt" => "2020-10-15T06:38:00.000+00:00",
+            "\$updatedAt" => "2020-10-15T06:38:00.000+00:00",
+            "\$permissions" => array(),
+            "providerMethodId" => "abdk3ed3sdkfj",
+            "clientSecret" => "seti_ddfe",
+            "providerUserId" => "abdk3ed3sdkfj",
+            "userId" => "5e5ea5c16897e",
+            "expiryMonth" => 2,
+            "expiryYear" => 2024,
+            "last4" => "4242",
+            "brand" => "visa",
+            "name" => "John Doe",
+            "mandateId" => "yxc",
+            "country" => "de",
+            "state" => "",
+            "lastError" => "Your card has insufficient funds.",
+            "default" => true,
+            "expired" => true,
+            "failed" => true);
+
+        $this->client
+            ->allows()->call(Mockery::any(), Mockery::any(), Mockery::any(), Mockery::any())
+            ->andReturn($data);
+
+        $response = $this->account->getPaymentMethod(
+            "<PAYMENT_METHOD_ID>"
+        );
+
+        $this->assertSame($data, $response);
+    }
+
+    public function testMethodUpdatePaymentMethod(): void {
+
+        $data = array(
+            "\$id" => "5e5ea5c16897e",
+            "\$createdAt" => "2020-10-15T06:38:00.000+00:00",
+            "\$updatedAt" => "2020-10-15T06:38:00.000+00:00",
+            "\$permissions" => array(),
+            "providerMethodId" => "abdk3ed3sdkfj",
+            "clientSecret" => "seti_ddfe",
+            "providerUserId" => "abdk3ed3sdkfj",
+            "userId" => "5e5ea5c16897e",
+            "expiryMonth" => 2,
+            "expiryYear" => 2024,
+            "last4" => "4242",
+            "brand" => "visa",
+            "name" => "John Doe",
+            "mandateId" => "yxc",
+            "country" => "de",
+            "state" => "",
+            "lastError" => "Your card has insufficient funds.",
+            "default" => true,
+            "expired" => true,
+            "failed" => true);
+
+        $this->client
+            ->allows()->call(Mockery::any(), Mockery::any(), Mockery::any(), Mockery::any())
+            ->andReturn($data);
+
+        $response = $this->account->updatePaymentMethod(
+            "<PAYMENT_METHOD_ID>",
+            1,
+            1
+        );
+
+        $this->assertSame($data, $response);
+    }
+
+    public function testMethodDeletePaymentMethod(): void {
+
+        $data = '';
+
+        $this->client
+            ->allows()->call(Mockery::any(), Mockery::any(), Mockery::any(), Mockery::any())
+            ->andReturn($data);
+
+        $response = $this->account->deletePaymentMethod(
+            "<PAYMENT_METHOD_ID>"
+        );
+
+        $this->assertSame($data, $response);
+    }
+
+    public function testMethodUpdatePaymentMethodProvider(): void {
+
+        $data = array(
+            "\$id" => "5e5ea5c16897e",
+            "\$createdAt" => "2020-10-15T06:38:00.000+00:00",
+            "\$updatedAt" => "2020-10-15T06:38:00.000+00:00",
+            "\$permissions" => array(),
+            "providerMethodId" => "abdk3ed3sdkfj",
+            "clientSecret" => "seti_ddfe",
+            "providerUserId" => "abdk3ed3sdkfj",
+            "userId" => "5e5ea5c16897e",
+            "expiryMonth" => 2,
+            "expiryYear" => 2024,
+            "last4" => "4242",
+            "brand" => "visa",
+            "name" => "John Doe",
+            "mandateId" => "yxc",
+            "country" => "de",
+            "state" => "",
+            "lastError" => "Your card has insufficient funds.",
+            "default" => true,
+            "expired" => true,
+            "failed" => true);
+
+        $this->client
+            ->allows()->call(Mockery::any(), Mockery::any(), Mockery::any(), Mockery::any())
+            ->andReturn($data);
+
+        $response = $this->account->updatePaymentMethodProvider(
+            "<PAYMENT_METHOD_ID>",
+            "<PROVIDER_METHOD_ID>",
+            "<NAME>"
+        );
+
+        $this->assertSame($data, $response);
+    }
+
+    public function testMethodUpdatePaymentMethodMandateOptions(): void {
+
+        $data = array(
+            "\$id" => "5e5ea5c16897e",
+            "\$createdAt" => "2020-10-15T06:38:00.000+00:00",
+            "\$updatedAt" => "2020-10-15T06:38:00.000+00:00",
+            "\$permissions" => array(),
+            "providerMethodId" => "abdk3ed3sdkfj",
+            "clientSecret" => "seti_ddfe",
+            "providerUserId" => "abdk3ed3sdkfj",
+            "userId" => "5e5ea5c16897e",
+            "expiryMonth" => 2,
+            "expiryYear" => 2024,
+            "last4" => "4242",
+            "brand" => "visa",
+            "name" => "John Doe",
+            "mandateId" => "yxc",
+            "country" => "de",
+            "state" => "",
+            "lastError" => "Your card has insufficient funds.",
+            "default" => true,
+            "expired" => true,
+            "failed" => true);
+
+        $this->client
+            ->allows()->call(Mockery::any(), Mockery::any(), Mockery::any(), Mockery::any())
+            ->andReturn($data);
+
+        $response = $this->account->updatePaymentMethodMandateOptions(
+            "<PAYMENT_METHOD_ID>"
         );
 
         $this->assertSame($data, $response);

@@ -111,7 +111,10 @@ final class ProjectsTest extends TestCase {
             "serviceStatusForSites" => true,
             "serviceStatusForFunctions" => true,
             "serviceStatusForGraphql" => true,
-            "serviceStatusForMessaging" => true);
+            "serviceStatusForMessaging" => true,
+            "region" => "fra",
+            "billingLimits" => array(),
+            "blocks" => array());
 
         $this->client
             ->allows()->call(Mockery::any(), Mockery::any(), Mockery::any(), Mockery::any())
@@ -192,7 +195,10 @@ final class ProjectsTest extends TestCase {
             "serviceStatusForSites" => true,
             "serviceStatusForFunctions" => true,
             "serviceStatusForGraphql" => true,
-            "serviceStatusForMessaging" => true);
+            "serviceStatusForMessaging" => true,
+            "region" => "fra",
+            "billingLimits" => array(),
+            "blocks" => array());
 
         $this->client
             ->allows()->call(Mockery::any(), Mockery::any(), Mockery::any(), Mockery::any())
@@ -271,7 +277,10 @@ final class ProjectsTest extends TestCase {
             "serviceStatusForSites" => true,
             "serviceStatusForFunctions" => true,
             "serviceStatusForGraphql" => true,
-            "serviceStatusForMessaging" => true);
+            "serviceStatusForMessaging" => true,
+            "region" => "fra",
+            "billingLimits" => array(),
+            "blocks" => array());
 
         $this->client
             ->allows()->call(Mockery::any(), Mockery::any(), Mockery::any(), Mockery::any())
@@ -366,7 +375,10 @@ final class ProjectsTest extends TestCase {
             "serviceStatusForSites" => true,
             "serviceStatusForFunctions" => true,
             "serviceStatusForGraphql" => true,
-            "serviceStatusForMessaging" => true);
+            "serviceStatusForMessaging" => true,
+            "region" => "fra",
+            "billingLimits" => array(),
+            "blocks" => array());
 
         $this->client
             ->allows()->call(Mockery::any(), Mockery::any(), Mockery::any(), Mockery::any())
@@ -447,7 +459,10 @@ final class ProjectsTest extends TestCase {
             "serviceStatusForSites" => true,
             "serviceStatusForFunctions" => true,
             "serviceStatusForGraphql" => true,
-            "serviceStatusForMessaging" => true);
+            "serviceStatusForMessaging" => true,
+            "region" => "fra",
+            "billingLimits" => array(),
+            "blocks" => array());
 
         $this->client
             ->allows()->call(Mockery::any(), Mockery::any(), Mockery::any(), Mockery::any())
@@ -527,7 +542,10 @@ final class ProjectsTest extends TestCase {
             "serviceStatusForSites" => true,
             "serviceStatusForFunctions" => true,
             "serviceStatusForGraphql" => true,
-            "serviceStatusForMessaging" => true);
+            "serviceStatusForMessaging" => true,
+            "region" => "fra",
+            "billingLimits" => array(),
+            "blocks" => array());
 
         $this->client
             ->allows()->call(Mockery::any(), Mockery::any(), Mockery::any(), Mockery::any())
@@ -607,7 +625,10 @@ final class ProjectsTest extends TestCase {
             "serviceStatusForSites" => true,
             "serviceStatusForFunctions" => true,
             "serviceStatusForGraphql" => true,
-            "serviceStatusForMessaging" => true);
+            "serviceStatusForMessaging" => true,
+            "region" => "fra",
+            "billingLimits" => array(),
+            "blocks" => array());
 
         $this->client
             ->allows()->call(Mockery::any(), Mockery::any(), Mockery::any(), Mockery::any())
@@ -687,7 +708,10 @@ final class ProjectsTest extends TestCase {
             "serviceStatusForSites" => true,
             "serviceStatusForFunctions" => true,
             "serviceStatusForGraphql" => true,
-            "serviceStatusForMessaging" => true);
+            "serviceStatusForMessaging" => true,
+            "region" => "fra",
+            "billingLimits" => array(),
+            "blocks" => array());
 
         $this->client
             ->allows()->call(Mockery::any(), Mockery::any(), Mockery::any(), Mockery::any())
@@ -767,7 +791,10 @@ final class ProjectsTest extends TestCase {
             "serviceStatusForSites" => true,
             "serviceStatusForFunctions" => true,
             "serviceStatusForGraphql" => true,
-            "serviceStatusForMessaging" => true);
+            "serviceStatusForMessaging" => true,
+            "region" => "fra",
+            "billingLimits" => array(),
+            "blocks" => array());
 
         $this->client
             ->allows()->call(Mockery::any(), Mockery::any(), Mockery::any(), Mockery::any())
@@ -849,7 +876,10 @@ final class ProjectsTest extends TestCase {
             "serviceStatusForSites" => true,
             "serviceStatusForFunctions" => true,
             "serviceStatusForGraphql" => true,
-            "serviceStatusForMessaging" => true);
+            "serviceStatusForMessaging" => true,
+            "region" => "fra",
+            "billingLimits" => array(),
+            "blocks" => array());
 
         $this->client
             ->allows()->call(Mockery::any(), Mockery::any(), Mockery::any(), Mockery::any())
@@ -929,7 +959,10 @@ final class ProjectsTest extends TestCase {
             "serviceStatusForSites" => true,
             "serviceStatusForFunctions" => true,
             "serviceStatusForGraphql" => true,
-            "serviceStatusForMessaging" => true);
+            "serviceStatusForMessaging" => true,
+            "region" => "fra",
+            "billingLimits" => array(),
+            "blocks" => array());
 
         $this->client
             ->allows()->call(Mockery::any(), Mockery::any(), Mockery::any(), Mockery::any())
@@ -1009,7 +1042,10 @@ final class ProjectsTest extends TestCase {
             "serviceStatusForSites" => true,
             "serviceStatusForFunctions" => true,
             "serviceStatusForGraphql" => true,
-            "serviceStatusForMessaging" => true);
+            "serviceStatusForMessaging" => true,
+            "region" => "fra",
+            "billingLimits" => array(),
+            "blocks" => array());
 
         $this->client
             ->allows()->call(Mockery::any(), Mockery::any(), Mockery::any(), Mockery::any())
@@ -1089,7 +1125,10 @@ final class ProjectsTest extends TestCase {
             "serviceStatusForSites" => true,
             "serviceStatusForFunctions" => true,
             "serviceStatusForGraphql" => true,
-            "serviceStatusForMessaging" => true);
+            "serviceStatusForMessaging" => true,
+            "region" => "fra",
+            "billingLimits" => array(),
+            "blocks" => array());
 
         $this->client
             ->allows()->call(Mockery::any(), Mockery::any(), Mockery::any(), Mockery::any())
@@ -1169,7 +1208,10 @@ final class ProjectsTest extends TestCase {
             "serviceStatusForSites" => true,
             "serviceStatusForFunctions" => true,
             "serviceStatusForGraphql" => true,
-            "serviceStatusForMessaging" => true);
+            "serviceStatusForMessaging" => true,
+            "region" => "fra",
+            "billingLimits" => array(),
+            "blocks" => array());
 
         $this->client
             ->allows()->call(Mockery::any(), Mockery::any(), Mockery::any(), Mockery::any())
@@ -1249,7 +1291,10 @@ final class ProjectsTest extends TestCase {
             "serviceStatusForSites" => true,
             "serviceStatusForFunctions" => true,
             "serviceStatusForGraphql" => true,
-            "serviceStatusForMessaging" => true);
+            "serviceStatusForMessaging" => true,
+            "region" => "fra",
+            "billingLimits" => array(),
+            "blocks" => array());
 
         $this->client
             ->allows()->call(Mockery::any(), Mockery::any(), Mockery::any(), Mockery::any())
@@ -1329,7 +1374,10 @@ final class ProjectsTest extends TestCase {
             "serviceStatusForSites" => true,
             "serviceStatusForFunctions" => true,
             "serviceStatusForGraphql" => true,
-            "serviceStatusForMessaging" => true);
+            "serviceStatusForMessaging" => true,
+            "region" => "fra",
+            "billingLimits" => array(),
+            "blocks" => array());
 
         $this->client
             ->allows()->call(Mockery::any(), Mockery::any(), Mockery::any(), Mockery::any())
@@ -1646,7 +1694,10 @@ final class ProjectsTest extends TestCase {
             "serviceStatusForSites" => true,
             "serviceStatusForFunctions" => true,
             "serviceStatusForGraphql" => true,
-            "serviceStatusForMessaging" => true);
+            "serviceStatusForMessaging" => true,
+            "region" => "fra",
+            "billingLimits" => array(),
+            "blocks" => array());
 
         $this->client
             ->allows()->call(Mockery::any(), Mockery::any(), Mockery::any(), Mockery::any())
@@ -1726,7 +1777,10 @@ final class ProjectsTest extends TestCase {
             "serviceStatusForSites" => true,
             "serviceStatusForFunctions" => true,
             "serviceStatusForGraphql" => true,
-            "serviceStatusForMessaging" => true);
+            "serviceStatusForMessaging" => true,
+            "region" => "fra",
+            "billingLimits" => array(),
+            "blocks" => array());
 
         $this->client
             ->allows()->call(Mockery::any(), Mockery::any(), Mockery::any(), Mockery::any())
@@ -1992,7 +2046,10 @@ final class ProjectsTest extends TestCase {
             "serviceStatusForSites" => true,
             "serviceStatusForFunctions" => true,
             "serviceStatusForGraphql" => true,
-            "serviceStatusForMessaging" => true);
+            "serviceStatusForMessaging" => true,
+            "region" => "fra",
+            "billingLimits" => array(),
+            "blocks" => array());
 
         $this->client
             ->allows()->call(Mockery::any(), Mockery::any(), Mockery::any(), Mockery::any())
@@ -2073,7 +2130,10 @@ final class ProjectsTest extends TestCase {
             "serviceStatusForSites" => true,
             "serviceStatusForFunctions" => true,
             "serviceStatusForGraphql" => true,
-            "serviceStatusForMessaging" => true);
+            "serviceStatusForMessaging" => true,
+            "region" => "fra",
+            "billingLimits" => array(),
+            "blocks" => array());
 
         $this->client
             ->allows()->call(Mockery::any(), Mockery::any(), Mockery::any(), Mockery::any())
@@ -2153,7 +2213,10 @@ final class ProjectsTest extends TestCase {
             "serviceStatusForSites" => true,
             "serviceStatusForFunctions" => true,
             "serviceStatusForGraphql" => true,
-            "serviceStatusForMessaging" => true);
+            "serviceStatusForMessaging" => true,
+            "region" => "fra",
+            "billingLimits" => array(),
+            "blocks" => array());
 
         $this->client
             ->allows()->call(Mockery::any(), Mockery::any(), Mockery::any(), Mockery::any())
@@ -2252,7 +2315,10 @@ final class ProjectsTest extends TestCase {
             "serviceStatusForSites" => true,
             "serviceStatusForFunctions" => true,
             "serviceStatusForGraphql" => true,
-            "serviceStatusForMessaging" => true);
+            "serviceStatusForMessaging" => true,
+            "region" => "fra",
+            "billingLimits" => array(),
+            "blocks" => array());
 
         $this->client
             ->allows()->call(Mockery::any(), Mockery::any(), Mockery::any(), Mockery::any())

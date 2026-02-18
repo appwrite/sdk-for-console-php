@@ -29,7 +29,7 @@ POST https://cloud.appwrite.io/v1/projects
 | projectId | string | Unique Id. Choose a custom ID or generate a random ID with `ID.unique()`. Valid chars are a-z, and hyphen. Can't start with a special char. Max length is 36 chars. |  |
 | name | string | Project name. Max length: 128 chars. |  |
 | teamId | string | Team unique ID. |  |
-| region | string | Project Region. | default |
+| region | string | Project Region. | fra |
 | description | string | Project description. Max length: 256 chars. |  |
 | logo | string | Project logo. |  |
 | url | string | Project URL. |  |
@@ -605,7 +605,7 @@ POST https://cloud.appwrite.io/v1/projects/{projectId}/schedules
 | Field Name | Type | Description | Default |
 | --- | --- | --- | --- |
 | projectId | string | **Required** Project unique ID. |  |
-| resourceType | string | The resource type for the schedule. Possible values: function, execution, message. |  |
+| resourceType | string | The resource type for the schedule. Possible values: function, execution, message, backup. |  |
 | resourceId | string | The resource ID to associate with this schedule. |  |
 | schedule | string | Schedule CRON expression. |  |
 | active | boolean | Whether the schedule is active. |  |
