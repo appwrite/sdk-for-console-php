@@ -193,7 +193,7 @@ POST https://cloud.appwrite.io/v1/account/jwts
 GET https://cloud.appwrite.io/v1/account/keys
 ```
 
-** Get a list of all API keys from the current account.  **
+** Get a list of all API keys from the current account. **
 
 ### Parameters
 

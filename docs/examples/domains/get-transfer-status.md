@@ -2,15 +2,14 @@
 <?php
 
 use Appwrite\Client;
-use Appwrite\Services\Organizations;
+use Appwrite\Services\Domains;
 
 $client = (new Client())
     ->setEndpoint('https://<REGION>.cloud.appwrite.io/v1') // Your API Endpoint
     ->setProject('<YOUR_PROJECT_ID>'); // Your project ID
 
-$organizations = new Organizations($client);
+$domains = new Domains($client);
 
-$result = $organizations->getScopes(
-    organizationId: '<ORGANIZATION_ID>',
-    projectId: '<PROJECT_ID>' // optional
+$result = $domains->getTransferStatus(
+    domainId: '<DOMAIN_ID>'
 );```

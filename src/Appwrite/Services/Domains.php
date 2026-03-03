@@ -126,6 +126,64 @@ class Domains extends Service
     }
 
     /**
+     *     Create a domain purchase with registrant information.
+     *
+     * @param string $domain
+     * @param string $organizationId
+     * @param string $firstName
+     * @param string $lastName
+     * @param string $email
+     * @param string $phone
+     * @param string $billingAddressId
+     * @param string $paymentMethodId
+     * @param ?string $addressLine3
+     * @param ?string $companyName
+     * @param ?int $periodYears
+     * @throws AppwriteException
+     * @return array
+     */
+    public function createPurchase(string $domain, string $organizationId, string $firstName, string $lastName, string $email, string $phone, string $billingAddressId, string $paymentMethodId, ?string $addressLine3 = null, ?string $companyName = null, ?int $periodYears = null): array
+    {
+        $apiPath = str_replace(
+            [],
+            [],
+            '/domains/purchases'
+        );
+
+        $apiParams = [];
+        $apiParams['domain'] = $domain;
+        $apiParams['organizationId'] = $organizationId;
+        $apiParams['firstName'] = $firstName;
+        $apiParams['lastName'] = $lastName;
+        $apiParams['email'] = $email;
+        $apiParams['phone'] = $phone;
+        $apiParams['billingAddressId'] = $billingAddressId;
+        $apiParams['paymentMethodId'] = $paymentMethodId;
+
+        if (!is_null($addressLine3)) {
+            $apiParams['addressLine3'] = $addressLine3;
+        }
+
+        if (!is_null($companyName)) {
+            $apiParams['companyName'] = $companyName;
+        }
+
+        if (!is_null($periodYears)) {
+            $apiParams['periodYears'] = $periodYears;
+        }
+
+        $apiHeaders = [];
+        $apiHeaders['content-type'] = 'application/json';
+
+        return $this->client->call(
+            Client::METHOD_POST,
+            $apiPath,
+            $apiHeaders,
+            $apiParams
+        );
+    }
+
+    /**
      *     List domain suggestions.
      *
      * @param string $query
@@ -172,6 +230,73 @@ class Domains extends Service
 
         return $this->client->call(
             Client::METHOD_GET,
+            $apiPath,
+            $apiHeaders,
+            $apiParams
+        );
+    }
+
+    /**
+     *     Create a domain transfer in with authorization code and registrant
+     * information.
+     *
+     * @param string $domain
+     * @param string $organizationId
+     * @param string $authCode
+     * @param string $paymentMethodId
+     * @throws AppwriteException
+     * @return array
+     */
+    public function createTransferIn(string $domain, string $organizationId, string $authCode, string $paymentMethodId): array
+    {
+        $apiPath = str_replace(
+            [],
+            [],
+            '/domains/transfers/in'
+        );
+
+        $apiParams = [];
+        $apiParams['domain'] = $domain;
+        $apiParams['organizationId'] = $organizationId;
+        $apiParams['authCode'] = $authCode;
+        $apiParams['paymentMethodId'] = $paymentMethodId;
+
+        $apiHeaders = [];
+        $apiHeaders['content-type'] = 'application/json';
+
+        return $this->client->call(
+            Client::METHOD_POST,
+            $apiPath,
+            $apiHeaders,
+            $apiParams
+        );
+    }
+
+    /**
+     *     Create a domain transfer out and return the authorization code.
+     *
+     * @param string $domainId
+     * @param string $organizationId
+     * @throws AppwriteException
+     * @return array
+     */
+    public function createTransferOut(string $domainId, string $organizationId): array
+    {
+        $apiPath = str_replace(
+            [],
+            [],
+            '/domains/transfers/out'
+        );
+
+        $apiParams = [];
+        $apiParams['domainId'] = $domainId;
+        $apiParams['organizationId'] = $organizationId;
+
+        $apiHeaders = [];
+        $apiHeaders['content-type'] = 'application/json';
+
+        return $this->client->call(
+            Client::METHOD_POST,
             $apiPath,
             $apiHeaders,
             $apiParams
@@ -1680,6 +1805,34 @@ class Domains extends Service
 
         return $this->client->call(
             Client::METHOD_PATCH,
+            $apiPath,
+            $apiHeaders,
+            $apiParams
+        );
+    }
+
+    /**
+     *     Get the transfer status for a domain.
+     *
+     * @param string $domainId
+     * @throws AppwriteException
+     * @return array
+     */
+    public function getTransferStatus(string $domainId): array
+    {
+        $apiPath = str_replace(
+            ['{domainId}'],
+            [$domainId],
+            '/domains/{domainId}/transfers/status'
+        );
+
+        $apiParams = [];
+        $apiParams['domainId'] = $domainId;
+
+        $apiHeaders = [];
+
+        return $this->client->call(
+            Client::METHOD_GET,
             $apiPath,
             $apiHeaders,
             $apiParams

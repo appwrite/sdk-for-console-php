@@ -2,15 +2,14 @@
 <?php
 
 use Appwrite\Client;
-use Appwrite\Services\Organizations;
+use Appwrite\Services\Projects;
 
 $client = (new Client())
     ->setEndpoint('https://<REGION>.cloud.appwrite.io/v1') // Your API Endpoint
     ->setProject('<YOUR_PROJECT_ID>'); // Your project ID
 
-$organizations = new Organizations($client);
+$projects = new Projects($client);
 
-$result = $organizations->getScopes(
-    organizationId: '<ORGANIZATION_ID>',
-    projectId: '<PROJECT_ID>' // optional
+$result = $projects->updateConsoleAccess(
+    projectId: '<PROJECT_ID>'
 );```

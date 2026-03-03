@@ -41,7 +41,7 @@ class EmailTemplateType implements JsonSerializable
     public static function MAGICSESSION(): EmailTemplateType
     {
         if (!isset(self::$MAGICSESSION)) {
-            self::$MAGICSESSION = new EmailTemplateType('magicsession');
+            self::$MAGICSESSION = new EmailTemplateType('magicSession');
         }
         return self::$MAGICSESSION;
     }
@@ -62,21 +62,21 @@ class EmailTemplateType implements JsonSerializable
     public static function MFACHALLENGE(): EmailTemplateType
     {
         if (!isset(self::$MFACHALLENGE)) {
-            self::$MFACHALLENGE = new EmailTemplateType('mfachallenge');
+            self::$MFACHALLENGE = new EmailTemplateType('mfaChallenge');
         }
         return self::$MFACHALLENGE;
     }
     public static function SESSIONALERT(): EmailTemplateType
     {
         if (!isset(self::$SESSIONALERT)) {
-            self::$SESSIONALERT = new EmailTemplateType('sessionalert');
+            self::$SESSIONALERT = new EmailTemplateType('sessionAlert');
         }
         return self::$SESSIONALERT;
     }
     public static function OTPSESSION(): EmailTemplateType
     {
         if (!isset(self::$OTPSESSION)) {
-            self::$OTPSESSION = new EmailTemplateType('otpsession');
+            self::$OTPSESSION = new EmailTemplateType('otpSession');
         }
         return self::$OTPSESSION;
     }

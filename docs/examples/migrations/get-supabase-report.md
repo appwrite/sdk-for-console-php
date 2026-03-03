@@ -3,7 +3,7 @@
 
 use Appwrite\Client;
 use Appwrite\Services\Migrations;
-use Appwrite\Enums\Resources;
+use Appwrite\Enums\SupabaseMigrationResource;
 
 $client = (new Client())
     ->setEndpoint('https://<REGION>.cloud.appwrite.io/v1') // Your API Endpoint
@@ -12,7 +12,7 @@ $client = (new Client())
 $migrations = new Migrations($client);
 
 $result = $migrations->getSupabaseReport(
-    resources: [Resources::USER()],
+    resources: [SupabaseMigrationResource::USER()],
     endpoint: 'https://example.com',
     apiKey: '<API_KEY>',
     databaseHost: '<DATABASE_HOST>',

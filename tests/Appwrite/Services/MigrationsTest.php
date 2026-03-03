@@ -6,7 +6,10 @@ use Appwrite\Client;
 use Appwrite\InputFile;
 use Mockery;
 use PHPUnit\Framework\TestCase;
-use Appwrite\Enums\Resources;
+use Appwrite\Enums\AppwriteMigrationResource;
+use Appwrite\Enums\FirebaseMigrationResource;
+use Appwrite\Enums\NHostMigrationResource;
+use Appwrite\Enums\SupabaseMigrationResource;
 
 final class MigrationsTest extends TestCase {
     private $client;
@@ -55,7 +58,7 @@ final class MigrationsTest extends TestCase {
             ->andReturn($data);
 
         $response = $this->migrations->createAppwriteMigration(
-            array(Resources::USER()),
+            array(AppwriteMigrationResource::USER()),
             "https://example.com",
             "<PROJECT_ID>",
             "<API_KEY>"
@@ -74,6 +77,7 @@ final class MigrationsTest extends TestCase {
             "file" => 20,
             "bucket" => 20,
             "function" => 20,
+            "site" => 5,
             "size" => 30000,
             "version" => "1.4.0");
 
@@ -82,7 +86,7 @@ final class MigrationsTest extends TestCase {
             ->andReturn($data);
 
         $response = $this->migrations->getAppwriteReport(
-            array(Resources::USER()),
+            array(AppwriteMigrationResource::USER()),
             "https://example.com",
             "<PROJECT_ID>",
             "<KEY>"
@@ -172,7 +176,7 @@ final class MigrationsTest extends TestCase {
             ->andReturn($data);
 
         $response = $this->migrations->createFirebaseMigration(
-            array(Resources::USER()),
+            array(FirebaseMigrationResource::USER()),
             "<SERVICE_ACCOUNT>"
         );
 
@@ -189,6 +193,7 @@ final class MigrationsTest extends TestCase {
             "file" => 20,
             "bucket" => 20,
             "function" => 20,
+            "site" => 5,
             "size" => 30000,
             "version" => "1.4.0");
 
@@ -197,7 +202,7 @@ final class MigrationsTest extends TestCase {
             ->andReturn($data);
 
         $response = $this->migrations->getFirebaseReport(
-            array(Resources::USER()),
+            array(FirebaseMigrationResource::USER()),
             "<SERVICE_ACCOUNT>"
         );
 
@@ -226,7 +231,7 @@ final class MigrationsTest extends TestCase {
             ->andReturn($data);
 
         $response = $this->migrations->createNHostMigration(
-            array(Resources::USER()),
+            array(NHostMigrationResource::USER()),
             "<SUBDOMAIN>",
             "<REGION>",
             "<ADMIN_SECRET>",
@@ -248,6 +253,7 @@ final class MigrationsTest extends TestCase {
             "file" => 20,
             "bucket" => 20,
             "function" => 20,
+            "site" => 5,
             "size" => 30000,
             "version" => "1.4.0");
 
@@ -256,7 +262,7 @@ final class MigrationsTest extends TestCase {
             ->andReturn($data);
 
         $response = $this->migrations->getNHostReport(
-            array(Resources::USER()),
+            array(NHostMigrationResource::USER()),
             "<SUBDOMAIN>",
             "<REGION>",
             "<ADMIN_SECRET>",
@@ -290,7 +296,7 @@ final class MigrationsTest extends TestCase {
             ->andReturn($data);
 
         $response = $this->migrations->createSupabaseMigration(
-            array(Resources::USER()),
+            array(SupabaseMigrationResource::USER()),
             "https://example.com",
             "<API_KEY>",
             "<DATABASE_HOST>",
@@ -311,6 +317,7 @@ final class MigrationsTest extends TestCase {
             "file" => 20,
             "bucket" => 20,
             "function" => 20,
+            "site" => 5,
             "size" => 30000,
             "version" => "1.4.0");
 
@@ -319,7 +326,7 @@ final class MigrationsTest extends TestCase {
             ->andReturn($data);
 
         $response = $this->migrations->getSupabaseReport(
-            array(Resources::USER()),
+            array(SupabaseMigrationResource::USER()),
             "https://example.com",
             "<API_KEY>",
             "<DATABASE_HOST>",

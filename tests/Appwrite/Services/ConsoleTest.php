@@ -112,6 +112,7 @@ final class ConsoleTest extends TestCase {
             "authPhone" => 10,
             "domains" => 5,
             "logs" => 25,
+            "projectInactivityDays" => 7,
             "alertLimit" => 80,
             "usage" => array(),
             "addons" => array(),
@@ -152,12 +153,8 @@ final class ConsoleTest extends TestCase {
             "\$id" => "",
             "title" => "",
             "description" => "",
-            "tag" => "
-Deprecated: str_replace(): Passing null to parameter #3 ($subject) of type array|string is deprecated in /usr/src/code/vendor/appwrite/sdk-generator/src/SDK/SDK.php on line 176
-",
-            "icon" => "
-Deprecated: str_replace(): Passing null to parameter #3 ($subject) of type array|string is deprecated in /usr/src/code/vendor/appwrite/sdk-generator/src/SDK/SDK.php on line 176
-",
+            "tag" => "",
+            "icon" => "",
             "url" => "",
             "active" => true,
             "external" => true,
@@ -323,7 +320,18 @@ Deprecated: str_replace(): Passing null to parameter #3 ($subject) of type array
             "_APP_DOMAIN_SITES" => "sites.localhost,sites.example.com",
             "_APP_DOMAIN_FUNCTIONS" => "functions.localhost",
             "_APP_OPTIONS_FORCE_HTTPS" => "enabled",
-            "_APP_DOMAINS_NAMESERVERS" => "ns1.example.com,ns2.example.com");
+            "_APP_DOMAINS_NAMESERVERS" => "ns1.example.com,ns2.example.com",
+            "_APP_DB_ADAPTER" => "mysql",
+            "supportForRelationships" => true,
+            "supportForOperators" => true,
+            "supportForSpatials" => true,
+            "supportForSpatialIndexNull" => true,
+            "supportForFulltextWildcard" => true,
+            "supportForMultipleFulltextIndexes" => true,
+            "supportForAttributeResizing" => true,
+            "supportForSchemas" => true,
+            "maxIndexLength" => 768,
+            "supportForIntegerIds" => true);
 
         $this->client
             ->allows()->call(Mockery::any(), Mockery::any(), Mockery::any(), Mockery::any())

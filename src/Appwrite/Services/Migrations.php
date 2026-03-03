@@ -6,7 +6,10 @@ use Appwrite\AppwriteException;
 use Appwrite\Client;
 use Appwrite\Service;
 use Appwrite\InputFile;
-use Appwrite\Enums\Resources;
+use Appwrite\Enums\AppwriteMigrationResource;
+use Appwrite\Enums\FirebaseMigrationResource;
+use Appwrite\Enums\NHostMigrationResource;
+use Appwrite\Enums\SupabaseMigrationResource;
 
 class Migrations extends Service
 {

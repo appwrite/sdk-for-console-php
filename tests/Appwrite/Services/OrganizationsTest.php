@@ -1121,6 +1121,7 @@ final class OrganizationsTest extends TestCase {
             "authPhone" => 10,
             "domains" => 5,
             "logs" => 25,
+            "projectInactivityDays" => 7,
             "alertLimit" => 80,
             "usage" => array(),
             "addons" => array(),
