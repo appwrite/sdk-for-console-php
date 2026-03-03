@@ -413,8 +413,7 @@ final class SitesTest extends TestCase {
 
         $response = $this->sites->createDeployment(
             "<SITE_ID>",
-            InputFile::withData('', "image/png"),
-            true
+            InputFile::withData('', "image/png")
         );
 
         $this->assertSame($data, $response);

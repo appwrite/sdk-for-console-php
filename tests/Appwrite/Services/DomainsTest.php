@@ -42,13 +42,15 @@ final class DomainsTest extends TestCase {
             "\$updatedAt" => "2020-10-15T06:38:00.000+00:00",
             "domain" => "example.com",
             "registrar" => "appwrite",
+            "paymentStatus" => "pending",
             "nameservers" => "Appwrite",
             "expire" => "2020-10-15T06:38:00.000+00:00",
             "renewal" => "2020-10-15T06:38:00.000+00:00",
             "autoRenewal" => true,
-            "renewalPrice" => 25.99,
+            "renewalPrice" => 2599,
             "teamId" => "5e5ea5c16897e",
-            "dnsRecords" => array());
+            "dnsRecords" => array(),
+            "transferStatus" => "pending");
 
         $this->client
             ->allows()->call(Mockery::any(), Mockery::any(), Mockery::any(), Mockery::any())
@@ -69,7 +71,8 @@ final class DomainsTest extends TestCase {
             "tld" => "com",
             "available" => true,
             "price" => 25.99,
-            "periodYears" => 1);
+            "periodYears" => 1,
+            "premium" => true);
 
         $this->client
             ->allows()->call(Mockery::any(), Mockery::any(), Mockery::any(), Mockery::any())
@@ -77,6 +80,42 @@ final class DomainsTest extends TestCase {
 
         $response = $this->domains->getPrice(
             ""
+        );
+
+        $this->assertSame($data, $response);
+    }
+
+    public function testMethodCreatePurchase(): void {
+
+        $data = array(
+            "\$id" => "5e5ea5c16897e",
+            "\$createdAt" => "2020-10-15T06:38:00.000+00:00",
+            "\$updatedAt" => "2020-10-15T06:38:00.000+00:00",
+            "domain" => "example.com",
+            "registrar" => "appwrite",
+            "paymentStatus" => "pending",
+            "nameservers" => "Appwrite",
+            "expire" => "2020-10-15T06:38:00.000+00:00",
+            "renewal" => "2020-10-15T06:38:00.000+00:00",
+            "autoRenewal" => true,
+            "renewalPrice" => 2599,
+            "teamId" => "5e5ea5c16897e",
+            "dnsRecords" => array(),
+            "transferStatus" => "pending");
+
+        $this->client
+            ->allows()->call(Mockery::any(), Mockery::any(), Mockery::any(), Mockery::any())
+            ->andReturn($data);
+
+        $response = $this->domains->createPurchase(
+            "",
+            "<ORGANIZATION_ID>",
+            "<FIRST_NAME>",
+            "<LAST_NAME>",
+            "email@example.com",
+            "+12065550100",
+            "<BILLING_ADDRESS_ID>",
+            "<PAYMENT_METHOD_ID>"
         );
 
         $this->assertSame($data, $response);
@@ -99,6 +138,55 @@ final class DomainsTest extends TestCase {
         $this->assertSame($data, $response);
     }
 
+    public function testMethodCreateTransferIn(): void {
+
+        $data = array(
+            "\$id" => "5e5ea5c16897e",
+            "\$createdAt" => "2020-10-15T06:38:00.000+00:00",
+            "\$updatedAt" => "2020-10-15T06:38:00.000+00:00",
+            "domain" => "example.com",
+            "registrar" => "appwrite",
+            "paymentStatus" => "pending",
+            "nameservers" => "Appwrite",
+            "expire" => "2020-10-15T06:38:00.000+00:00",
+            "renewal" => "2020-10-15T06:38:00.000+00:00",
+            "autoRenewal" => true,
+            "renewalPrice" => 2599,
+            "teamId" => "5e5ea5c16897e",
+            "dnsRecords" => array(),
+            "transferStatus" => "pending");
+
+        $this->client
+            ->allows()->call(Mockery::any(), Mockery::any(), Mockery::any(), Mockery::any())
+            ->andReturn($data);
+
+        $response = $this->domains->createTransferIn(
+            "",
+            "<ORGANIZATION_ID>",
+            "<AUTH_CODE>",
+            "<PAYMENT_METHOD_ID>"
+        );
+
+        $this->assertSame($data, $response);
+    }
+
+    public function testMethodCreateTransferOut(): void {
+
+        $data = array(
+            "authCode" => "mock_1a2b3c4d");
+
+        $this->client
+            ->allows()->call(Mockery::any(), Mockery::any(), Mockery::any(), Mockery::any())
+            ->andReturn($data);
+
+        $response = $this->domains->createTransferOut(
+            "<DOMAIN_ID>",
+            "<ORGANIZATION_ID>"
+        );
+
+        $this->assertSame($data, $response);
+    }
+
     public function testMethodGet(): void {
 
         $data = array(
@@ -107,13 +195,15 @@ final class DomainsTest extends TestCase {
             "\$updatedAt" => "2020-10-15T06:38:00.000+00:00",
             "domain" => "example.com",
             "registrar" => "appwrite",
+            "paymentStatus" => "pending",
             "nameservers" => "Appwrite",
             "expire" => "2020-10-15T06:38:00.000+00:00",
             "renewal" => "2020-10-15T06:38:00.000+00:00",
             "autoRenewal" => true,
-            "renewalPrice" => 25.99,
+            "renewalPrice" => 2599,
             "teamId" => "5e5ea5c16897e",
-            "dnsRecords" => array());
+            "dnsRecords" => array(),
+            "transferStatus" => "pending");
 
         $this->client
             ->allows()->call(Mockery::any(), Mockery::any(), Mockery::any(), Mockery::any())
@@ -149,13 +239,15 @@ final class DomainsTest extends TestCase {
             "\$updatedAt" => "2020-10-15T06:38:00.000+00:00",
             "domain" => "example.com",
             "registrar" => "appwrite",
+            "paymentStatus" => "pending",
             "nameservers" => "Appwrite",
             "expire" => "2020-10-15T06:38:00.000+00:00",
             "renewal" => "2020-10-15T06:38:00.000+00:00",
             "autoRenewal" => true,
-            "renewalPrice" => 25.99,
+            "renewalPrice" => 2599,
             "teamId" => "5e5ea5c16897e",
-            "dnsRecords" => array());
+            "dnsRecords" => array(),
+            "transferStatus" => "pending");
 
         $this->client
             ->allows()->call(Mockery::any(), Mockery::any(), Mockery::any(), Mockery::any())
@@ -1058,13 +1150,15 @@ final class DomainsTest extends TestCase {
             "\$updatedAt" => "2020-10-15T06:38:00.000+00:00",
             "domain" => "example.com",
             "registrar" => "appwrite",
+            "paymentStatus" => "pending",
             "nameservers" => "Appwrite",
             "expire" => "2020-10-15T06:38:00.000+00:00",
             "renewal" => "2020-10-15T06:38:00.000+00:00",
             "autoRenewal" => true,
-            "renewalPrice" => 25.99,
+            "renewalPrice" => 2599,
             "teamId" => "5e5ea5c16897e",
-            "dnsRecords" => array());
+            "dnsRecords" => array(),
+            "transferStatus" => "pending");
 
         $this->client
             ->allows()->call(Mockery::any(), Mockery::any(), Mockery::any(), Mockery::any())
@@ -1073,6 +1167,24 @@ final class DomainsTest extends TestCase {
         $response = $this->domains->updateTeam(
             "<DOMAIN_ID>",
             "<TEAM_ID>"
+        );
+
+        $this->assertSame($data, $response);
+    }
+
+    public function testMethodGetTransferStatus(): void {
+
+        $data = array(
+            "status" => "pending_registry",
+            "reason" => "Transfer in progress",
+            "timestamp" => "2020-10-15T06:38:00.000+00:00");
+
+        $this->client
+            ->allows()->call(Mockery::any(), Mockery::any(), Mockery::any(), Mockery::any())
+            ->andReturn($data);
+
+        $response = $this->domains->getTransferStatus(
+            "<DOMAIN_ID>"
         );
 
         $this->assertSame($data, $response);
@@ -1101,13 +1213,15 @@ final class DomainsTest extends TestCase {
             "\$updatedAt" => "2020-10-15T06:38:00.000+00:00",
             "domain" => "example.com",
             "registrar" => "appwrite",
+            "paymentStatus" => "pending",
             "nameservers" => "Appwrite",
             "expire" => "2020-10-15T06:38:00.000+00:00",
             "renewal" => "2020-10-15T06:38:00.000+00:00",
             "autoRenewal" => true,
-            "renewalPrice" => 25.99,
+            "renewalPrice" => 2599,
             "teamId" => "5e5ea5c16897e",
-            "dnsRecords" => array());
+            "dnsRecords" => array(),
+            "transferStatus" => "pending");
 
         $this->client
             ->allows()->call(Mockery::any(), Mockery::any(), Mockery::any(), Mockery::any())

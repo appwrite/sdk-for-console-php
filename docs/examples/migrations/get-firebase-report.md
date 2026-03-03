@@ -3,7 +3,7 @@
 
 use Appwrite\Client;
 use Appwrite\Services\Migrations;
-use Appwrite\Enums\Resources;
+use Appwrite\Enums\FirebaseMigrationResource;
 
 $client = (new Client())
     ->setEndpoint('https://<REGION>.cloud.appwrite.io/v1') // Your API Endpoint
@@ -12,6 +12,6 @@ $client = (new Client())
 $migrations = new Migrations($client);
 
 $result = $migrations->getFirebaseReport(
-    resources: [Resources::USER()],
+    resources: [FirebaseMigrationResource::USER()],
     serviceAccount: '<SERVICE_ACCOUNT>'
 );```

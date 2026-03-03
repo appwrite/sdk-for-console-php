@@ -1284,10 +1284,11 @@ class Organizations extends Service
      * Get Scopes
      *
      * @param string $organizationId
+     * @param ?string $projectId
      * @throws AppwriteException
      * @return array
      */
-    public function getScopes(string $organizationId): array
+    public function getScopes(string $organizationId, ?string $projectId = null): array
     {
         $apiPath = str_replace(
             ['{organizationId}'],
@@ -1297,6 +1298,10 @@ class Organizations extends Service
 
         $apiParams = [];
         $apiParams['organizationId'] = $organizationId;
+
+        if (!is_null($projectId)) {
+            $apiParams['projectId'] = $projectId;
+        }
 
         $apiHeaders = [];
 

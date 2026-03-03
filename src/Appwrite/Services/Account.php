@@ -500,7 +500,7 @@ class Account extends Service
     }
 
     /**
-     * Get a list of all API keys from the current account. 
+     * Get a list of all API keys from the current account.
      *
      * @param ?bool $total
      * @throws AppwriteException

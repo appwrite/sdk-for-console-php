@@ -65,6 +65,8 @@ final class VcsTest extends TestCase {
             "provider" => "github",
             "private" => true,
             "defaultBranch" => "main",
+            "providerInstallationId" => "108104697",
+            "authorized" => true,
             "pushedAt" => "datetime",
             "variables" => array());
 
@@ -90,6 +92,8 @@ final class VcsTest extends TestCase {
             "provider" => "github",
             "private" => true,
             "defaultBranch" => "main",
+            "providerInstallationId" => "108104697",
+            "authorized" => true,
             "pushedAt" => "datetime",
             "variables" => array());
 

@@ -306,6 +306,20 @@ PATCH https://cloud.appwrite.io/v1/projects/{projectId}/auth/{method}
 
 
 ```http request
+PATCH https://cloud.appwrite.io/v1/projects/{projectId}/console-access
+```
+
+** Record console access to a project. This endpoint updates the last accessed timestamp for the project to track console activity.
+ **
+
+### Parameters
+
+| Field Name | Type | Description | Default |
+| --- | --- | --- | --- |
+| projectId | string | **Required** Project ID |  |
+
+
+```http request
 GET https://cloud.appwrite.io/v1/projects/{projectId}/dev-keys
 ```
 
@@ -741,6 +755,21 @@ POST https://cloud.appwrite.io/v1/projects/{projectId}/smtp/tests
 | username | string | SMTP server username |  |
 | password | string | SMTP server password |  |
 | secure | string | Does SMTP server use secure connection |  |
+
+
+```http request
+PATCH https://cloud.appwrite.io/v1/projects/{projectId}/status
+```
+
+** Update the status of a project. Can be used to archive/restore projects, and to restore paused projects. When restoring a paused project, the console fingerprint header must be provided and the project must not be blocked for any reason other than inactivity.
+ **
+
+### Parameters
+
+| Field Name | Type | Description | Default |
+| --- | --- | --- | --- |
+| projectId | string | **Required** Project ID |  |
+| status | string | New status for the project |  |
 
 
 ```http request

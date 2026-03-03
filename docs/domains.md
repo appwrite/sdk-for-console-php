@@ -45,6 +45,29 @@ GET https://cloud.appwrite.io/v1/domains/price
 
 
 ```http request
+POST https://cloud.appwrite.io/v1/domains/purchases
+```
+
+**     Create a domain purchase with registrant information. **
+
+### Parameters
+
+| Field Name | Type | Description | Default |
+| --- | --- | --- | --- |
+| domain | string | Fully qualified domain name to purchase (for example, example.com). |  |
+| organizationId | string | Team ID that will own the domain. |  |
+| firstName | string | Registrant first name used for domain registration. |  |
+| lastName | string | Registrant last name used for domain registration. |  |
+| email | string | Registrant email address for registration and notices. |  |
+| phone | string | Registrant phone number in E.164 format (for example, +15555551234). |  |
+| billingAddressId | string | Billing address ID used for registration contact details. |  |
+| addressLine3 | string | Additional address line for the registrant (line 3). |  |
+| companyName | string | Company or organization name for the registrant. |  |
+| periodYears | integer | Registration term in years (1-10). | 1 |
+| paymentMethodId | string | Payment method ID to authorize and capture the purchase. |  |
+
+
+```http request
 GET https://cloud.appwrite.io/v1/domains/suggestions
 ```
 
@@ -60,6 +83,36 @@ GET https://cloud.appwrite.io/v1/domains/suggestions
 | filterType | string | Filter type: premium, suggestion. |  |
 | priceMax | integer | Filter premium domains by maximum price. Only premium domains at or below this price will be returned. Does not affect regular domain suggestions. |  |
 | priceMin | integer | Filter premium domains by minimum price. Only premium domains at or above this price will be returned. Does not affect regular domain suggestions. |  |
+
+
+```http request
+POST https://cloud.appwrite.io/v1/domains/transfers/in
+```
+
+**     Create a domain transfer in with authorization code and registrant information. **
+
+### Parameters
+
+| Field Name | Type | Description | Default |
+| --- | --- | --- | --- |
+| domain | string | Domain name to transfer in. |  |
+| organizationId | string | Organization ID that this domain will belong to. |  |
+| authCode | string | Authorization code for the domain transfer. |  |
+| paymentMethodId | string | Payment method ID to authorize and capture the transfer. |  |
+
+
+```http request
+POST https://cloud.appwrite.io/v1/domains/transfers/out
+```
+
+**     Create a domain transfer out and return the authorization code. **
+
+### Parameters
+
+| Field Name | Type | Description | Default |
+| --- | --- | --- | --- |
+| domainId | string | Domain unique ID. |  |
+| organizationId | string | Organization ID that this domain belongs to. |  |
 
 
 ```http request
@@ -736,6 +789,19 @@ PATCH https://cloud.appwrite.io/v1/domains/{domainId}/team
 | --- | --- | --- | --- |
 | domainId | string | **Required** Domain unique ID. |  |
 | teamId | string | New team unique ID. |  |
+
+
+```http request
+GET https://cloud.appwrite.io/v1/domains/{domainId}/transfers/status
+```
+
+**     Get the transfer status for a domain. **
+
+### Parameters
+
+| Field Name | Type | Description | Default |
+| --- | --- | --- | --- |
+| domainId | string | **Required** Domain unique ID. |  |
 
 
 ```http request

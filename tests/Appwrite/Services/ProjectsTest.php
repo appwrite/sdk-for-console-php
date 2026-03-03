@@ -15,6 +15,7 @@ use Appwrite\Enums\PlatformType;
 use Appwrite\Enums\ResourceType;
 use Appwrite\Enums\ApiService;
 use Appwrite\Enums\SMTPSecure;
+use Appwrite\Enums\Status;
 use Appwrite\Enums\EmailTemplateType;
 use Appwrite\Enums\EmailTemplateLocale;
 use Appwrite\Enums\SmsTemplateType;
@@ -114,7 +115,8 @@ final class ProjectsTest extends TestCase {
             "serviceStatusForMessaging" => true,
             "region" => "fra",
             "billingLimits" => array(),
-            "blocks" => array());
+            "blocks" => array(),
+            "consoleAccessedAt" => "2020-10-15T06:38:00.000+00:00");
 
         $this->client
             ->allows()->call(Mockery::any(), Mockery::any(), Mockery::any(), Mockery::any())
@@ -198,7 +200,8 @@ final class ProjectsTest extends TestCase {
             "serviceStatusForMessaging" => true,
             "region" => "fra",
             "billingLimits" => array(),
-            "blocks" => array());
+            "blocks" => array(),
+            "consoleAccessedAt" => "2020-10-15T06:38:00.000+00:00");
 
         $this->client
             ->allows()->call(Mockery::any(), Mockery::any(), Mockery::any(), Mockery::any())
@@ -280,7 +283,8 @@ final class ProjectsTest extends TestCase {
             "serviceStatusForMessaging" => true,
             "region" => "fra",
             "billingLimits" => array(),
-            "blocks" => array());
+            "blocks" => array(),
+            "consoleAccessedAt" => "2020-10-15T06:38:00.000+00:00");
 
         $this->client
             ->allows()->call(Mockery::any(), Mockery::any(), Mockery::any(), Mockery::any())
@@ -378,7 +382,8 @@ final class ProjectsTest extends TestCase {
             "serviceStatusForMessaging" => true,
             "region" => "fra",
             "billingLimits" => array(),
-            "blocks" => array());
+            "blocks" => array(),
+            "consoleAccessedAt" => "2020-10-15T06:38:00.000+00:00");
 
         $this->client
             ->allows()->call(Mockery::any(), Mockery::any(), Mockery::any(), Mockery::any())
@@ -462,7 +467,8 @@ final class ProjectsTest extends TestCase {
             "serviceStatusForMessaging" => true,
             "region" => "fra",
             "billingLimits" => array(),
-            "blocks" => array());
+            "blocks" => array(),
+            "consoleAccessedAt" => "2020-10-15T06:38:00.000+00:00");
 
         $this->client
             ->allows()->call(Mockery::any(), Mockery::any(), Mockery::any(), Mockery::any())
@@ -545,7 +551,8 @@ final class ProjectsTest extends TestCase {
             "serviceStatusForMessaging" => true,
             "region" => "fra",
             "billingLimits" => array(),
-            "blocks" => array());
+            "blocks" => array(),
+            "consoleAccessedAt" => "2020-10-15T06:38:00.000+00:00");
 
         $this->client
             ->allows()->call(Mockery::any(), Mockery::any(), Mockery::any(), Mockery::any())
@@ -628,7 +635,8 @@ final class ProjectsTest extends TestCase {
             "serviceStatusForMessaging" => true,
             "region" => "fra",
             "billingLimits" => array(),
-            "blocks" => array());
+            "blocks" => array(),
+            "consoleAccessedAt" => "2020-10-15T06:38:00.000+00:00");
 
         $this->client
             ->allows()->call(Mockery::any(), Mockery::any(), Mockery::any(), Mockery::any())
@@ -711,7 +719,8 @@ final class ProjectsTest extends TestCase {
             "serviceStatusForMessaging" => true,
             "region" => "fra",
             "billingLimits" => array(),
-            "blocks" => array());
+            "blocks" => array(),
+            "consoleAccessedAt" => "2020-10-15T06:38:00.000+00:00");
 
         $this->client
             ->allows()->call(Mockery::any(), Mockery::any(), Mockery::any(), Mockery::any())
@@ -794,7 +803,8 @@ final class ProjectsTest extends TestCase {
             "serviceStatusForMessaging" => true,
             "region" => "fra",
             "billingLimits" => array(),
-            "blocks" => array());
+            "blocks" => array(),
+            "consoleAccessedAt" => "2020-10-15T06:38:00.000+00:00");
 
         $this->client
             ->allows()->call(Mockery::any(), Mockery::any(), Mockery::any(), Mockery::any())
@@ -879,7 +889,8 @@ final class ProjectsTest extends TestCase {
             "serviceStatusForMessaging" => true,
             "region" => "fra",
             "billingLimits" => array(),
-            "blocks" => array());
+            "blocks" => array(),
+            "consoleAccessedAt" => "2020-10-15T06:38:00.000+00:00");
 
         $this->client
             ->allows()->call(Mockery::any(), Mockery::any(), Mockery::any(), Mockery::any())
@@ -962,7 +973,8 @@ final class ProjectsTest extends TestCase {
             "serviceStatusForMessaging" => true,
             "region" => "fra",
             "billingLimits" => array(),
-            "blocks" => array());
+            "blocks" => array(),
+            "consoleAccessedAt" => "2020-10-15T06:38:00.000+00:00");
 
         $this->client
             ->allows()->call(Mockery::any(), Mockery::any(), Mockery::any(), Mockery::any())
@@ -1045,7 +1057,8 @@ final class ProjectsTest extends TestCase {
             "serviceStatusForMessaging" => true,
             "region" => "fra",
             "billingLimits" => array(),
-            "blocks" => array());
+            "blocks" => array(),
+            "consoleAccessedAt" => "2020-10-15T06:38:00.000+00:00");
 
         $this->client
             ->allows()->call(Mockery::any(), Mockery::any(), Mockery::any(), Mockery::any())
@@ -1128,7 +1141,8 @@ final class ProjectsTest extends TestCase {
             "serviceStatusForMessaging" => true,
             "region" => "fra",
             "billingLimits" => array(),
-            "blocks" => array());
+            "blocks" => array(),
+            "consoleAccessedAt" => "2020-10-15T06:38:00.000+00:00");
 
         $this->client
             ->allows()->call(Mockery::any(), Mockery::any(), Mockery::any(), Mockery::any())
@@ -1211,7 +1225,8 @@ final class ProjectsTest extends TestCase {
             "serviceStatusForMessaging" => true,
             "region" => "fra",
             "billingLimits" => array(),
-            "blocks" => array());
+            "blocks" => array(),
+            "consoleAccessedAt" => "2020-10-15T06:38:00.000+00:00");
 
         $this->client
             ->allows()->call(Mockery::any(), Mockery::any(), Mockery::any(), Mockery::any())
@@ -1294,7 +1309,8 @@ final class ProjectsTest extends TestCase {
             "serviceStatusForMessaging" => true,
             "region" => "fra",
             "billingLimits" => array(),
-            "blocks" => array());
+            "blocks" => array(),
+            "consoleAccessedAt" => "2020-10-15T06:38:00.000+00:00");
 
         $this->client
             ->allows()->call(Mockery::any(), Mockery::any(), Mockery::any(), Mockery::any())
@@ -1377,7 +1393,8 @@ final class ProjectsTest extends TestCase {
             "serviceStatusForMessaging" => true,
             "region" => "fra",
             "billingLimits" => array(),
-            "blocks" => array());
+            "blocks" => array(),
+            "consoleAccessedAt" => "2020-10-15T06:38:00.000+00:00");
 
         $this->client
             ->allows()->call(Mockery::any(), Mockery::any(), Mockery::any(), Mockery::any())
@@ -1387,6 +1404,21 @@ final class ProjectsTest extends TestCase {
             "<PROJECT_ID>",
             AuthMethod::EMAILPASSWORD(),
             true
+        );
+
+        $this->assertSame($data, $response);
+    }
+
+    public function testMethodUpdateConsoleAccess(): void {
+
+        $data = '';
+
+        $this->client
+            ->allows()->call(Mockery::any(), Mockery::any(), Mockery::any(), Mockery::any())
+            ->andReturn($data);
+
+        $response = $this->projects->updateConsoleAccess(
+            "<PROJECT_ID>"
         );
 
         $this->assertSame($data, $response);
@@ -1697,7 +1729,8 @@ final class ProjectsTest extends TestCase {
             "serviceStatusForMessaging" => true,
             "region" => "fra",
             "billingLimits" => array(),
-            "blocks" => array());
+            "blocks" => array(),
+            "consoleAccessedAt" => "2020-10-15T06:38:00.000+00:00");
 
         $this->client
             ->allows()->call(Mockery::any(), Mockery::any(), Mockery::any(), Mockery::any())
@@ -1780,7 +1813,8 @@ final class ProjectsTest extends TestCase {
             "serviceStatusForMessaging" => true,
             "region" => "fra",
             "billingLimits" => array(),
-            "blocks" => array());
+            "blocks" => array(),
+            "consoleAccessedAt" => "2020-10-15T06:38:00.000+00:00");
 
         $this->client
             ->allows()->call(Mockery::any(), Mockery::any(), Mockery::any(), Mockery::any())
@@ -2049,7 +2083,8 @@ final class ProjectsTest extends TestCase {
             "serviceStatusForMessaging" => true,
             "region" => "fra",
             "billingLimits" => array(),
-            "blocks" => array());
+            "blocks" => array(),
+            "consoleAccessedAt" => "2020-10-15T06:38:00.000+00:00");
 
         $this->client
             ->allows()->call(Mockery::any(), Mockery::any(), Mockery::any(), Mockery::any())
@@ -2133,7 +2168,8 @@ final class ProjectsTest extends TestCase {
             "serviceStatusForMessaging" => true,
             "region" => "fra",
             "billingLimits" => array(),
-            "blocks" => array());
+            "blocks" => array(),
+            "consoleAccessedAt" => "2020-10-15T06:38:00.000+00:00");
 
         $this->client
             ->allows()->call(Mockery::any(), Mockery::any(), Mockery::any(), Mockery::any())
@@ -2216,7 +2252,8 @@ final class ProjectsTest extends TestCase {
             "serviceStatusForMessaging" => true,
             "region" => "fra",
             "billingLimits" => array(),
-            "blocks" => array());
+            "blocks" => array(),
+            "consoleAccessedAt" => "2020-10-15T06:38:00.000+00:00");
 
         $this->client
             ->allows()->call(Mockery::any(), Mockery::any(), Mockery::any(), Mockery::any())
@@ -2244,6 +2281,22 @@ final class ProjectsTest extends TestCase {
             "<SENDER_NAME>",
             "email@example.com",
             ""
+        );
+
+        $this->assertSame($data, $response);
+    }
+
+    public function testMethodUpdateStatus(): void {
+
+        $data = '';
+
+        $this->client
+            ->allows()->call(Mockery::any(), Mockery::any(), Mockery::any(), Mockery::any())
+            ->andReturn($data);
+
+        $response = $this->projects->updateStatus(
+            "<PROJECT_ID>",
+            Status::ACTIVE()
         );
 
         $this->assertSame($data, $response);
@@ -2318,7 +2371,8 @@ final class ProjectsTest extends TestCase {
             "serviceStatusForMessaging" => true,
             "region" => "fra",
             "billingLimits" => array(),
-            "blocks" => array());
+            "blocks" => array(),
+            "consoleAccessedAt" => "2020-10-15T06:38:00.000+00:00");
 
         $this->client
             ->allows()->call(Mockery::any(), Mockery::any(), Mockery::any(), Mockery::any())

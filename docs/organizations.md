@@ -570,6 +570,7 @@ GET https://cloud.appwrite.io/v1/organizations/{organizationId}/roles
 | Field Name | Type | Description | Default |
 | --- | --- | --- | --- |
 | organizationId | string | **Required** Organization id |  |
+| projectId | string | Project id |  |
 
 
 ```http request

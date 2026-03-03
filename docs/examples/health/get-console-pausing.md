@@ -2,15 +2,15 @@
 <?php
 
 use Appwrite\Client;
-use Appwrite\Services\Organizations;
+use Appwrite\Services\Health;
 
 $client = (new Client())
     ->setEndpoint('https://<REGION>.cloud.appwrite.io/v1') // Your API Endpoint
     ->setProject('<YOUR_PROJECT_ID>'); // Your project ID
 
-$organizations = new Organizations($client);
+$health = new Health($client);
 
-$result = $organizations->getScopes(
-    organizationId: '<ORGANIZATION_ID>',
-    projectId: '<PROJECT_ID>' // optional
+$result = $health->getConsolePausing(
+    threshold: null, // optional
+    inactivityDays: null // optional
 );```

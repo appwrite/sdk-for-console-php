@@ -15,6 +15,7 @@ use Appwrite\Enums\PlatformType;
 use Appwrite\Enums\ResourceType;
 use Appwrite\Enums\ApiService;
 use Appwrite\Enums\SMTPSecure;
+use Appwrite\Enums\Status;
 use Appwrite\Enums\EmailTemplateType;
 use Appwrite\Enums\EmailTemplateLocale;
 use Appwrite\Enums\SmsTemplateType;
@@ -704,6 +705,37 @@ class Projects extends Service
         $apiParams['projectId'] = $projectId;
         $apiParams['method'] = $method;
         $apiParams['status'] = $status;
+
+        $apiHeaders = [];
+        $apiHeaders['content-type'] = 'application/json';
+
+        return $this->client->call(
+            Client::METHOD_PATCH,
+            $apiPath,
+            $apiHeaders,
+            $apiParams
+        );
+    }
+
+    /**
+     * Record console access to a project. This endpoint updates the last accessed
+     * timestamp for the project to track console activity.
+     * 
+     *
+     * @param string $projectId
+     * @throws AppwriteException
+     * @return string
+     */
+    public function updateConsoleAccess(string $projectId): string
+    {
+        $apiPath = str_replace(
+            ['{projectId}'],
+            [$projectId],
+            '/projects/{projectId}/console-access'
+        );
+
+        $apiParams = [];
+        $apiParams['projectId'] = $projectId;
 
         $apiHeaders = [];
         $apiHeaders['content-type'] = 'application/json';
@@ -1677,6 +1709,41 @@ class Projects extends Service
 
         return $this->client->call(
             Client::METHOD_POST,
+            $apiPath,
+            $apiHeaders,
+            $apiParams
+        );
+    }
+
+    /**
+     * Update the status of a project. Can be used to archive/restore projects,
+     * and to restore paused projects. When restoring a paused project, the
+     * console fingerprint header must be provided and the project must not be
+     * blocked for any reason other than inactivity.
+     * 
+     *
+     * @param string $projectId
+     * @param Status $status
+     * @throws AppwriteException
+     * @return string
+     */
+    public function updateStatus(string $projectId, Status $status): string
+    {
+        $apiPath = str_replace(
+            ['{projectId}'],
+            [$projectId],
+            '/projects/{projectId}/status'
+        );
+
+        $apiParams = [];
+        $apiParams['projectId'] = $projectId;
+        $apiParams['status'] = $status;
+
+        $apiHeaders = [];
+        $apiHeaders['content-type'] = 'application/json';
+
+        return $this->client->call(
+            Client::METHOD_PATCH,
             $apiPath,
             $apiHeaders,
             $apiParams

@@ -52,7 +52,7 @@ class SmsTemplateType implements JsonSerializable
     public static function MFACHALLENGE(): SmsTemplateType
     {
         if (!isset(self::$MFACHALLENGE)) {
-            self::$MFACHALLENGE = new SmsTemplateType('mfachallenge');
+            self::$MFACHALLENGE = new SmsTemplateType('mfaChallenge');
         }
         return self::$MFACHALLENGE;
     }
